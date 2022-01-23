@@ -253,6 +253,15 @@ code {
   margin-bottom: 1rem;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
+.star{
+  cursor: pointer;
+  transition: color 200ms;
+}
+
  @media screen and (max-width: 480px) {
    .deal_details{
      padding: 0px !important;

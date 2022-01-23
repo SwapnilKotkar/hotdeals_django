@@ -17,7 +17,7 @@ const UserLoginPage = () => {
        password: "" 
     });
 
-    const [loginRecord, setLoginRecord] = useState([]);
+    // const [loginRecord, setLoginRecord] = useState([]);
 
     const handleChange = (event) =>{
         const {name, value} = event.target;
@@ -26,11 +26,11 @@ const UserLoginPage = () => {
 
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = async () =>{
-        setLoginRecord([...loginRecord, login])
-        setLogin({
-            username: "",
-            password: "" 
-         });
+        // setLoginRecord([...loginRecord, login])
+        // setLogin({
+        //     username: "",
+        //     password: "" 
+        //  });
 
          const {username, password} = login;
 

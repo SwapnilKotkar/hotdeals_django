@@ -34,7 +34,7 @@ const Navbar = () =>{
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">Admin</a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><NavLink className="dropdown-item" to='/adminprofile'>Profile</NavLink></li>
+                <li><NavLink className="dropdown-item" to='/adminprofile/editprofile'>Profile</NavLink></li>
                 <li><NavLink className="dropdown-item" to='/'>Logout</NavLink></li>
               </ul>
             </li>
@@ -71,10 +71,10 @@ const Navbar = () =>{
               </button>
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
-                <Menu/>
-                <li>
-                  <NavLink className="nav-link p-0 mx-lg-2" to="/submitdeal"><button className="btn btn-primary rounded-3" type="submit" ><span className="text-capitalize" style={{fontSize:"14px"}}>Submit Deal</span></button></NavLink>                
-              </li>
+                  <Menu/>
+                  <li>
+                    <NavLink className="nav-link p-0 mx-lg-2" to="/submitdeal"><button className="btn btn-primary rounded-3" type="submit" ><span className="text-capitalize" style={{fontSize:"14px"}}>Submit Deal</span></button></NavLink>                
+                  </li>
                 </ul>          
               </div>
             </div>

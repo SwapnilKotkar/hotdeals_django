@@ -88,7 +88,7 @@ const AdminLoginPage = () => {
                 <hr className="container m-0"/>
                     <div className="container-sm d-flex justify-content-center">
                         <NavLink to="/" className="nav-link p-2 text-primary">Home</NavLink>
-                        <NavLink to="/adminlogin" className="nav-link p-2 text-primary">Admin Login</NavLink>
+                        <NavLink to="/userlogin" className="nav-link p-2 text-primary">User Login</NavLink>
                 </div>           
                 </form>        
                 </div>

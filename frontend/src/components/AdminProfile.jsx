@@ -1,5 +1,6 @@
 import Navbar from './Navbar';
 import Footer from "./Footer";
+import Sidebar from './Sidebar';
 import React, {useState} from 'react';
 import { useForm } from "react-hook-form";
 // import { useEffect } from 'react';
@@ -91,6 +92,8 @@ const AdminProfile = () => {
     return(
         <>
             <Navbar />
+            <Sidebar/>
+
             <div className="container-fluid mt-lg-5 mt-3 mb-lg-5 mb-3 d-flex justify-content-center" style={{maxWidth:"1000px"}}>
                 <form method="POST" onSubmit={handleSubmit(onSubmit)} className="container rounded shadow-5 bg-white ">
                     <div className="row">

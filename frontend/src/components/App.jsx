@@ -12,6 +12,9 @@ import UserProfile from "./UserProfile";
 import AdminProfile from "./AdminProfile";
 import UserLogout from "./UserLogout";
 import AdminLogout from "./AdminLogout";
+import DealsPage from "./DealsPage";
+import DealsCard from "./DealsCard";
+import Deals from "./Deals";
 // import { initialState, reducer } from "../reducer/useReducer";
 
 // export const userContext = createContext();
@@ -30,9 +33,12 @@ const App = () =>{
             <Route exact path='/submitdeal' element={<DealSubmit/>} />
             <Route exact path='/dealdetails' element={<DealDetails/>} />
             <Route exact path='/userprofile' element={<UserProfile/>} />
-            <Route exact path='/adminprofile' element={<AdminProfile/>} />
+            {/* <Route exact path='/adminprofile' element={<AdminProfile/>} /> */}
             <Route exact path='/userlogout' element={<UserLogout/>} />
             <Route exact path='/adminlogout' element={<AdminLogout/>} />
+            <Route exact path='/adminprofile/editprofile' element={<AdminProfile/>} />
+            {/* <Route exact path='/adminprofile/alldeals' element={<Deals/>} /> */}
+            <Route exact path='/adminprofile/allusers' element={<AdminLogout/>} /> 
             <Route path='*' element={<ErrorPage/>} />
         </Routes>
         {/* </userContext.Provider> */}

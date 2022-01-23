@@ -1,10 +1,8 @@
 
 import { NavLink } from "react-router-dom";
-import { getKey } from "./DealDetails";
 
 
 const DealsCard = (props) =>{
-    // let link = "";  
     return(
         <> 
         <div className="card mb-3 p-0">

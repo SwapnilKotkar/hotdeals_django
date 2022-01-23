@@ -13,7 +13,7 @@ let SignUpPage = () => {
         password:"",
     });
 
-    const [signinRecord, setSigninRecord]=useState([]);
+    // const [signinRecord, setSigninRecord]=useState([]);
 
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -23,13 +23,13 @@ let SignUpPage = () => {
 
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = async () => {
-        setSigninRecord([...signinRecord, values]);
-        setValues({
-            first_name:"",
-            last_name:"",
-            email:"",
-            password:""
-        });     
+        // setSigninRecord([...signinRecord, values]);
+        // setValues({
+        //     first_name:"",
+        //     last_name:"",
+        //     email:"",
+        //     password:""
+        // });     
         
         const {first_name, last_name, username= values.first_name + values.last_name, email, password} = values;
 
