@@ -2,7 +2,7 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { useState } from "react/cjs/react.development";
 import { useForm } from "react-hook-form";
-import DealsData from "../DealsData";
+import DealsData from "../deals components/DealsData";
 import {useNavigate} from 'react-router-dom';
 
 

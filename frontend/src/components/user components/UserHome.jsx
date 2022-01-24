@@ -1,12 +1,12 @@
-import Navbar from './Navbar';
-import Footer from "./Footer";
-import Sidebar from './Sidebar';
+import Navbar from '../Navbar';
+import Footer from "../Footer";
 import React, {useState} from 'react';
 import { useForm } from "react-hook-form";
 // import { useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
 
-const AdminProfile = () => {
+const UserHome = () => {
+
     const history = useNavigate();
 
     
@@ -88,12 +88,9 @@ const AdminProfile = () => {
         }
     };
 
-
     return(
         <>
             <Navbar />
-            <Sidebar/>
-
             <div className="container-fluid mt-lg-5 mt-3 mb-lg-5 mb-3 d-flex justify-content-center" style={{maxWidth:"1000px"}}>
                 <form method="POST" onSubmit={handleSubmit(onSubmit)} className="container rounded shadow-5 bg-white ">
                     <div className="row">
@@ -103,7 +100,7 @@ const AdminProfile = () => {
                         <div className="col-lg-8 col-md-7 col-sm-12">
                             <div className="p-3 py-5">
                                 <div className="d-flex justify-content-between align-items-center mb-3">
-                                    <h6 className="text-right">Edit Admin Profile</h6>
+                                    <h6 className="text-right">Edit Profile</h6>
                                 </div>
                                 <div className="row mt-2">
                                     <div className="col-lg-8 col-md-10 col-sm-12">
@@ -141,4 +138,4 @@ const AdminProfile = () => {
 
 }
 
-export default AdminProfile;
+export default UserHome;

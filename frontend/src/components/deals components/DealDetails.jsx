@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import StarRating from './StarRating';
-import Navbar from './Navbar';
-import Footer from "./Footer";
+import StarRating from '../user components/StarRating';
+import Navbar from '../Navbar';
+import Footer from "../Footer";
 import DealsData from "./DealsData";
-import ReviewData from './ReviewData';
+import ReviewData from '../user components/UserReviewData';
 
 const DealDetails = () =>{
 

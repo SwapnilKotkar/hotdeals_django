@@ -18,7 +18,7 @@ const Navbar = () =>{
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">User</a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><NavLink className="dropdown-item" to='/userprofile'>Profile</NavLink></li>
+                <li><NavLink className="dropdown-item" to='/userhome'>Profile</NavLink></li>
                 <li><NavLink className="dropdown-item" to='/'>Logout</NavLink></li>
               </ul>
             </li>
@@ -34,7 +34,7 @@ const Navbar = () =>{
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">Admin</a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><NavLink className="dropdown-item" to='/adminprofile/editprofile'>Profile</NavLink></li>
+                <li><NavLink className="dropdown-item" to='/adminhome'>Dashboard</NavLink></li>
                 <li><NavLink className="dropdown-item" to='/'>Logout</NavLink></li>
               </ul>
             </li>
