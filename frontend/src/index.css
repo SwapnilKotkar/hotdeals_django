@@ -270,6 +270,19 @@ input[type="radio"] {
    .deal_card{
      font-size: 13px;
    }
+   .deal-btn{
+    padding: 0 10px;
+  }
+  .deal-btn > span{
+   font-size: 11px !important;
+  }
+  .deal-name{
+    font-size: 11px;
+    padding: 2px 2px 0 0;
+  }
+  .degree{
+    transform: scale(0.7, 0.7);
+  }
   .footer_columns{
     flex-direction: column;
     align-items: center;

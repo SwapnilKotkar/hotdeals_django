@@ -44,7 +44,7 @@ const DealDetails = () =>{
                         <div className='mb-2 p-2'>
                             <h4>{val.cust_name}</h4>
                             <h6>{val.date}</h6>
-                            <StarRating className="mb-2" size = "30" ratingValue = {val.cust_rating}/>
+                            <StarRating className="mb-2" size = "30" key = {index} ratingValue = {val.cust_rating}/>
                             {/* <h5>{val.cust_rating}</h5> */}
                             <p>{val.cust_review}</p>
                         </div>
