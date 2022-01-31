@@ -5,7 +5,7 @@ const DealsSearchBar = ({filterItem, catItems, viewEvent}) => {
     return (
         <>
             <div className="bg-light d-flex justify-content-center">
-              <div className="container-lg p-0 m-2 row d-flex justify-content-center  px-2">  
+              <div className="container-lg p-0 m-2 row d-flex justify-content-center  px-3">  
                 <div className="col-12 col-sm-10 col d-flex justify-content-center p-0">
                   <div className="dropdown col-lg-1 col-md-2 col-sm-2 col-3 d-flex justify-content-center">
                     <button className="btn btn-outline-primary p-2 m-0 rounded-3 border-1"  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
