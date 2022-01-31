@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hotdeals_django/static/css/main.5bb7611d.css",
+    "main.js": "/hotdeals_django/static/js/main.2b5c93d0.js",
+    "index.html": "/hotdeals_django/index.html",
+    "main.5bb7611d.css.map": "/hotdeals_django/static/css/main.5bb7611d.css.map",
+    "main.2b5c93d0.js.map": "/hotdeals_django/static/js/main.2b5c93d0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5bb7611d.css",
+    "static/js/main.2b5c93d0.js"
+  ]
+}
