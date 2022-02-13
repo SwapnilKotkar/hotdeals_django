@@ -8,11 +8,14 @@ const DealGridview = (props) => {
     <>
                 <div className="col">                
                     <div className="card h-100">
-                        <img
-                            src={props.dealImage}
-                            className="card-img-top"
-                            alt="Palm Springs Road"
-                        />
+                        <div className="d-flex align-items-center" style={{height:"60%"}}>
+                            <img
+                                src={props.dealImage}
+                                style={{height:"80%", maxWidth:"auto"}}
+                                className="card-img-top"
+                                alt="Palm Springs Road"
+                            />
+                        </div>
                         <div className="card-body p-1 p-sm-3">
                         <div className="col-12 h-25 d-flex justify-content-end align-items-center">
                                 {/* <div className="col-5 col-sm-8 d-flex justify-content-start align-items-center">{props.dealName}</div> */}

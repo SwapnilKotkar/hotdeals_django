@@ -24,6 +24,11 @@ code {
   .deals-bar{
     padding: 0px !important;
   }
+  .deal-btn{
+    border: none;
+    border-radius: 2px;
+   padding: 7px 13px;
+ }
 
  .footer_container{
    background-color: white;
@@ -270,14 +275,20 @@ input[type="radio"] {
    .deal_card{
      font-size: 13px;
    }
+   .list-deal-card{
+    height: 150px !important;
+  }
    .deal-btn{
+     border: none;
+     border-radius: 2px;
     padding: 0 10px;
   }
   .deal-btn > span{
-   font-size: 11px !important;
+    margin: 0;
+   font-size: 10px !important;
   }
   .deal-name{
-    font-size: 11px;
+    font-size: 14px;
     padding: 2px 2px 0 0;
   }
   .degree{

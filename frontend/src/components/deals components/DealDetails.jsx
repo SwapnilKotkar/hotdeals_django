@@ -18,15 +18,15 @@ const DealDetails = () =>{
             <div className="card mb-3">
                 <div className="row g-0">
                     <div className="col-12 d-flex justify-content-center align-items-center p-2 border-bottom border-grey border-2">
-                        <img src={DealsData[0].image} className="img-fluid rounded-5" alt="..." style={{maxHeight:"70%", maxWidth:"70%"}}/>
+                        <img src={DealsData[5].image} className="img-fluid rounded-5" alt="..." style={{maxHeight:"50%", maxWidth:"50%"}}/>
                     </div>
                     <div className="col-12">
                         <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <h5 className="card-title">{DealsData[5].name}</h5>
+                            <p className="card-text">{DealsData[5].info}</p>
                             <div className="container mb-3">
                         <div className="row">
-                            <div className="col-6 d-flex justify-content-start align-items-center fw-bolder fs-5" style={{color:"#4E9F3D"}}>price</div>
+                            <div className="col-6 d-flex justify-content-start align-items-center fw-bolder fs-5" style={{color:"#4E9F3D"}}>{DealsData[5].price}</div>
                                 <div className="col-6 d-flex justify-content-end align-items-center">
                                     <a href="#"><span className="text-capitalize fs-6" style={{fontWeight: "500"}}>Get Deal</span> <hr className="m-0 p-0 h-80"/></a>
                                 </div>

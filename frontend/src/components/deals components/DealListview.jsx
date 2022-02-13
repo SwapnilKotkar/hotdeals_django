@@ -6,13 +6,13 @@ import { BsArrowUpSquareFill, BsArrowDownSquareFill } from "react-icons/bs";
 const DealListview = (props) => {
   return(
    <>
-    <div className="card mb-3 p-0" style={{maxHeight:"200px"}}>
+    <div className="list-deal-card card mb-3 p-0" style={{height:"200px"}}>
                 <div className="row h-100">
-                    <div className="col-5 col-sm-3  h-100">
-                        <div className="h-100 d-flex justify-content-start">
+                    <div className="col-5 col-sm-3 h-100">
+                        <div className="h-100 d-flex justify-content-center align-items-center">
                             <img
                             src={props.dealImage}
-                            style={{maxHeight:"100%", maxWidth:"auto"}}
+                            style={{maxHeight:"70%", maxWidth:"auto"}}
                             alt="Trendy Pants and Shoes"
                             className="img-fluid rounded"
                             />
@@ -30,13 +30,15 @@ const DealListview = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-12 h-50 d-flex justify-content-start align-items-start" style={{overflow:"hidden", boxSizing:"border-box", width:"100%"}}><span className="deal-name">{props.dealName}</span></div>
-                            <div className="col-12 h-25 d-flex justify-content-between align-items-center">
+                            <div className="col-12 h-40 d-flex justify-content-start align-items-center px-3" style={{overflow:"hidden", boxSizing:"border-box", width:"90%"}}>
+                                <span className="deal-name" style={{whiteSpace:"nowrap", textOverflow:"hidden", overflow:"hidden"}}>{props.dealName}</span>
+                            </div>
+                            <div className="col-12 h-35 d-flex justify-content-between align-items-center">
                                     <div className="col-4 d-flex justify-content-start align-items-center fw-bolder fs-6" style={{color:"#4E9F3D"}}>{props.dealPrice}</div>
                                     <div className="col-8 d-flex justify-content-end align-items-center px-3">
                                         <NavLink to="/dealdetails">
-                                        <button className="btn btn-outline-primary border-1 deal-btn">
-                                            <span className="text-capitalize fs-6" style={{fontWeight: "500"}}>Get Deal</span>
+                                        <button className="btn-success border-1 deal-btn">
+                                            <span className="text-capitalize" style={{fontWeight: "500", fontSize:"13px"}}>Get Deal</span>
                                         </button>
                                         </NavLink>
                                     </div>
