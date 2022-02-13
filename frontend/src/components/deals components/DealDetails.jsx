@@ -7,6 +7,8 @@ import ReviewData from './UserReviewData';
 
 const DealDetails = () =>{
 
+    let link = "https://www.amazon.in/Fire-Boltt-Display-Smartwatch-Tracking-Resistance/dp/B09PRGXJJF/ref=sr_1_1_sspa?crid=2EGCC99O9UFGR&keywords=Fire-Boltt+Ninja+2+Max+1.5%2C+Full+Touch+Display+Smartwatch+with+SpO2&qid=1644770004&sprefix=fire-boltt+ninja+2+max+1.5%2C+full+touch+display+smartwatch+with+spo2%2Caps%2C165&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExV1ZCM0pQMEMxMzdSJmVuY3J5cHRlZElkPUEwMTU3NDU0MjVBTEhSR0VUVzA0WSZlbmNyeXB0ZWRBZElkPUEwODg1NDI1MlNJUUdOS01COFpKWSZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=";
+
     const [reviews, setReviews] =useState(ReviewData);
 
 
@@ -28,7 +30,7 @@ const DealDetails = () =>{
                         <div className="row">
                             <div className="col-6 d-flex justify-content-start align-items-center fw-bolder fs-5" style={{color:"#4E9F3D"}}>{DealsData[5].price}</div>
                                 <div className="col-6 d-flex justify-content-end align-items-center">
-                                    <a href="#"><span className="text-capitalize fs-6" style={{fontWeight: "500"}}>Get Deal</span> <hr className="m-0 p-0 h-80"/></a>
+                                    <a href={link} target="_blank"><span className="text-capitalize fs-6" style={{fontWeight: "500"}}>Get Deal</span> <hr className="m-0 p-0 h-80"/></a>
                                 </div>
                             </div>
                         </div>

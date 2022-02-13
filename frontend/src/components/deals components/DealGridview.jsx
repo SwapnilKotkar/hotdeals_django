@@ -8,10 +8,10 @@ const DealGridview = (props) => {
     <>
                 <div className="col">                
                     <div className="card h-100">
-                        <div className="d-flex align-items-center" style={{height:"60%"}}>
+                        <div className="d-flex align-items-center justify-content-center" style={{height:"60%"}}>
                             <img
                                 src={props.dealImage}
-                                style={{height:"80%", maxWidth:"auto"}}
+                                style={{height:"80%", width:"80%"}}
                                 className="card-img-top"
                                 alt="Palm Springs Road"
                             />

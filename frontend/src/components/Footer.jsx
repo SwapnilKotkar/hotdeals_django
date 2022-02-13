@@ -52,7 +52,7 @@ const Footer = () =>{
             <i className="fas fa-gem me-3"></i>hotDeals
           </h6>
           <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+          A platform where you can grab multiple deals from various shopping websites.</p>
         </div>
         {/* <!-- Grid column --> */}
 
@@ -83,16 +83,16 @@ const Footer = () =>{
             Useful links
           </h6>
           <p>
-            <a href="#!" className="text-reset">Home</a>
+            <NavLink to="/" className="text-reset">Home</NavLink>
           </p>
           <p>
-            <a href="#!" className="text-reset">Settings</a>
+            <NavLink to="/adminlogin" className="text-reset">Admin Login</NavLink>
           </p>
           <p>
-            <a href="#!" className="text-reset">Orders</a>
+            <NavLink to="/userlogin" className="text-reset">Sign in</NavLink>
           </p>
           <p>
-            <a href="#!" className="text-reset">Help</a>
+            <NavLink to="/signup" className="text-reset">Sign Up</NavLink>
           </p>
         </div>
         {/* <!-- Grid column --> */}
@@ -103,13 +103,13 @@ const Footer = () =>{
           <h6 className="text-uppercase fw-bold mb-4">
             Contact
           </h6>
-          <p><i className="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p><i className="fas fa-home me-3"></i>London, ST 10012, UK</p>
           <p>
             <i className="fas fa-envelope me-3"></i>
             info@example.com
           </p>
-          <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
+          <p><i className="fas fa-phone me-3"></i>+ 01 234 567 88</p>
+          <p><i className="fas fa-print me-3"></i>+ 01 234 567 89</p>
         </div>
         {/* <!-- Grid column --> */}
       </div>
