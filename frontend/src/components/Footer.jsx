@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Footer = () =>{
     return(
         <>
-            <footer className="text-center text-lg-start bg-light text-muted">
+            <footer className="bg-dark text-light text-center text-lg-start">
   {/* <!-- Section: Social media --> */}
   <section
     className="d-flex justify-content-center justify-justify-content-evenly p-4 border-bottom"
@@ -119,7 +119,7 @@ const Footer = () =>{
   {/* <!-- Section: Links  --> */}
 
   {/* <!-- Copyright --> */}
-  <div className="text-center p-4 bg-light">
+  <div className="text-center p-4 bg-dark">
     © 2021 Copyright
     <NavLink className="text-reset fw-bold" to="/"> hotDeals.com</NavLink>
   </div>

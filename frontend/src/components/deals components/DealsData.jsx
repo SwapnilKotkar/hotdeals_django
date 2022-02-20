@@ -2,15 +2,6 @@
 
 const DealsData = [
     {   
-        name : "TB Trybuy.in Exclusive Designer Army Green Cotton Solid Casual Shirt for Men",
-        image : "https://m.media-amazon.com/images/I/71v0AuFlfcL._UL1500_.jpg",
-        price : "499.00$",
-        info : " Soft, Breathable, Casual, and Stylish Look smart in this plain shirt from the brand of TB. The stylish look enhances the overall appeal of this shirt. This shirt ensures great comfort all day long. This shirt can be best teamed with a pair of contrasting trousers or jeans. This shirt features a standard collar, a full buttoned placket, and full sleeves with buttoned cuffs. The length of the shirt has been kept in such a way that it can be tucked in or can be kept out. It will give an awesome look in both ways. Perfect for Your Casual Day Out Our stylish casual shirts are versatile pieces that will add a touch of chic to your dressy or casual looks. Pairing the plain shirt with a solid trouser, dress your look in this shirt. Various colors to match your closet for a modern and effortless fashion, these shirts will feel great, look great, and turn a few heads. Made of Breathable Cotton fabric to Facilitate Comfort while Wearing This shirt features high-quality fabric and good stitching details. High-grade fabric features the good capability of tenderness, air permeability, and moisture absorption feels soft and comfy. Suitable for Casual, business work, date, party, Perfect gift for a family member, friends, and boyfriend. Altogether, it forms a soft-touch fabric that keeps you relaxed and at-ease for no matter how long you carry this shirt. Fashionable Button-Down Shirt Made of lightweight cotton fabric that is soft and comfortable to the skin, which is very suitable for hot summer. The shirt is manufactured with classy button-down details with perfect stitching. Suitable for both casual and formal occasions in hot weather/summer, such as meetings and parties.",
-        category : "Fashion",
-        degree : 0,
-        link : "#"
-    },
-    {   
         name : "Dews Furniture Sheesham Wood 6 Seater Standard Sofa Set for Living Room | 6 Seater",
         image : "https://m.media-amazon.com/images/I/61Bi3RkZ7RL._SL1500_.jpg",
         price : "3499$",
@@ -97,6 +88,15 @@ const DealsData = [
         price : "7999$",
         info : " Free upgrade to Windows 11 when available. Disclaimer-Upgrade rollout plan is being finalized and is scheduled to begin late in 2021 and continue into 2022. Specific timing will vary by device, Processor:11th Generation Intel Core i3-1115G4 Processor (6MB Cache, up to 4.1 GHz), Memory & Storage: 8GB, 8GBx1, DDR4, 2666MHz | 256GB M.2 PCIe NVMe Solid State Drive, Display:15.6-inch FHD (1920 x 1080) Anti-glare LED Backlight Non-Touch Narrow Border WVA Display, Graphics: Intel UHD Graphics with shared graphics memory, Operating System & Software:Windows 10 Home Single Language | Microsoft Office Home and Student 2019",
         category : "Gaming",
+        degree : 0,
+        link : "#"
+    },
+    {   
+        name : "TB Trybuy.in Exclusive Designer Army Green Cotton Solid Casual Shirt for Men",
+        image : "https://m.media-amazon.com/images/I/71v0AuFlfcL._UL1500_.jpg",
+        price : "499.00$",
+        info : " Soft, Breathable, Casual, and Stylish Look smart in this plain shirt from the brand of TB. The stylish look enhances the overall appeal of this shirt. This shirt ensures great comfort all day long. This shirt can be best teamed with a pair of contrasting trousers or jeans. This shirt features a standard collar, a full buttoned placket, and full sleeves with buttoned cuffs. The length of the shirt has been kept in such a way that it can be tucked in or can be kept out. It will give an awesome look in both ways. Perfect for Your Casual Day Out Our stylish casual shirts are versatile pieces that will add a touch of chic to your dressy or casual looks. Pairing the plain shirt with a solid trouser, dress your look in this shirt. Various colors to match your closet for a modern and effortless fashion, these shirts will feel great, look great, and turn a few heads. Made of Breathable Cotton fabric to Facilitate Comfort while Wearing This shirt features high-quality fabric and good stitching details. High-grade fabric features the good capability of tenderness, air permeability, and moisture absorption feels soft and comfy. Suitable for Casual, business work, date, party, Perfect gift for a family member, friends, and boyfriend. Altogether, it forms a soft-touch fabric that keeps you relaxed and at-ease for no matter how long you carry this shirt. Fashionable Button-Down Shirt Made of lightweight cotton fabric that is soft and comfortable to the skin, which is very suitable for hot summer. The shirt is manufactured with classy button-down details with perfect stitching. Suitable for both casual and formal occasions in hot weather/summer, such as meetings and parties.",
+        category : "Fashion",
         degree : 0,
         link : "#"
     }
