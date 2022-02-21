@@ -33,7 +33,7 @@ const DealsSearchBar = ({filterItem, catItems, viewEvent}) => {
                     </ul>
                   </div>
                   <div className="col-lg-7 col-12 p-0 d-flex justify-content-center align-items-center order-1 order-sm-2">
-                    <form className="d-flex w-100">
+                    <form className="d-flex col-12 col-sm-11">
                       <div className="input-group rounded">
                         <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                         <span className="input-group-text border-0 bg-primary" id="search-addon">
@@ -54,8 +54,8 @@ const DealsSearchBar = ({filterItem, catItems, viewEvent}) => {
                       <span className="text-capitalize" style={{fontSize:"14px"}}>{view === "list" ? <FaThList/> : <BsGridFill/>}</span>
                     </button>
                     <ul className="dropdown-menu mt-3" aria-labelledby="dropdownMenuButton">
-                      <li><button className="dropdown-item m-0 p-2" style={{cursor:"pointer"}} onClick={() => productView("list")}><FaThList fontSize="18px" color='grey'/></button></li>
-                      <li><button className="dropdown-item m-0 p-2" style={{cursor:"pointer"}} onClick={() => productView("grid")}><BsGridFill fontSize="18px" color='grey'/></button></li>
+                      <li className='col-6'><button className="dropdown-item m-0 p-2" style={{cursor:"pointer"}} onClick={() => productView("list")}><FaThList fontSize="18px" color='grey'/><span>List view</span></button></li>
+                      <li className='col-6'><button className="dropdown-item m-0 p-2" style={{cursor:"pointer"}} onClick={() => productView("grid")}><BsGridFill fontSize="18px" color='grey'/><span>List view</span></button></li>
                     </ul>
                   </div>
                   {/* <div className="col-2 d-flex justify-content-center"><FaThList fontSize="22px" color='white' onClick={() => viewEvent("list")}/></div>

@@ -6,10 +6,10 @@ import Footer from "./Footer";
 const HomePage = () =>{
     return(
         <>
-        <Navbar/>
-        <DealsPage/>
-        <Footer/>
-    </>
+            <Navbar/>
+            <DealsPage/>
+            <Footer/>
+        </>
     );
 }
 

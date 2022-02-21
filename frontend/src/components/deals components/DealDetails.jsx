@@ -4,6 +4,7 @@ import Navbar from '../Navbar';
 import Footer from "../Footer";
 import DealsData from "./DealsData";
 import ReviewData from './UserReviewData';
+import { NavLink } from 'react-router-dom';
 
 const DealDetails = () =>{
 
@@ -19,19 +20,19 @@ const DealDetails = () =>{
         <div className='container-lg p-3'>
             <div className="card mb-3">
                 <div className="row g-0">
-                    <div className="col-12 d-flex justify-content-center align-items-center p-2 border-bottom border-grey border-2">
+                    <div className="col-12 col-sm-5 d-flex justify-content-center align-items-center">
                         <img src={DealsData[5].image} className="img-fluid rounded-5" alt="..." style={{maxHeight:"50%", maxWidth:"50%"}}/>
                     </div>
-                    <div className="col-12">
-                        <div className="card-body">
-                            <h5 className="card-title">{DealsData[5].name}</h5>
-                            <p className="card-text">{DealsData[5].info}</p>
+                    <div className="col-12 col-sm-7">
+                        <div className="card-body d-flex flex-column p-4">
+                            <h5 className="card-title text-body">{DealsData[5].name}</h5>
+                            <p className="card-text text-body">{DealsData[5].info}</p>
+                            <div className="pb-2"><StarRating className="mb-2" size = "40"/></div>
                             <div className="container mb-3">
-                        <div className="row">
-                            <div className="col-6 d-flex justify-content-start align-items-center fw-bolder fs-5" style={{color:"#4E9F3D"}}>{DealsData[5].price}</div>
-                                <div className="col-6 d-flex justify-content-end align-items-center">
-                                    <a href={link} target="_blank"><span className="text-capitalize fs-6" style={{fontWeight: "500"}}>Get Deal</span> <hr className="m-0 p-0 h-80"/></a>
-                                </div>
+                            <div className='col-12'>
+                                <NavLink to="/dealdetails">
+                                        <button className="col-12 btn btn-success deal-button"><span>{DealsData[5].price}</span></button>
+                                </NavLink>
                             </div>
                         </div>
                     </div>

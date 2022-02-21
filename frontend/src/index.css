@@ -18,17 +18,13 @@ code {
 .selector-for-some-widget {
     box-sizing: border-box;
   }
+
   .navbar-nav{
     margin-left: auto;
   } 
   .deals-bar{
     padding: 0px !important;
   }
-  /* .deal-btn{
-    border: none;
-    border-radius: 2px;
-   padding: 7px 13px;
- } */
  .list-card {
   background: #ffffff;
   -webkit-border-radius: 5px;
@@ -81,6 +77,11 @@ padding: 0;
 .deal-button{
   color: white;
   font-size: 16px;
+}
+footer {
+  position:relative;
+  bottom:0;
+  width:100%;
 }
 .footer_container{
    background-color: white;

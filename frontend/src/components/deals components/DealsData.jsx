@@ -11,9 +11,27 @@ const DealsData = [
         link : "#"
     },
     {   
+        name : "Restolex Active - Bonnell - Supportive Spring - Bonnel Mattress-Grey-84 x 30 x 6",
+        image : "https://m.media-amazon.com/images/I/71pr76EFffL._SL1500_.jpg",
+        price : "499$",
+        info : " Dews Furniture's Sofa Is The Most Effective Solution For Your Contemporary Needs. We are serving thousands of Happy customers each month maintaining buyer’s trust & company’s goodwill since 1990. Our company is based in sardarshahar, Rajasthan. Our craftsman manufactures wooden furniture that is only made of 100% pure sheesham. We have all kind of furniture items starting from kitchen cabinets, Hallway cabinet console table, dining tables with chairs & bench, King & Queen size beds, Bedside table, nesting tables, sofa set, couch, chairs, office desks, kids study table, computer table, coffee table, center table, wall shelves, shoe racks, TV units etc.. Quality you can trust: Each product passes through quality check twice before dispatch. Morning Coffee While Checking Up Your Mails, Let Children Play Their Action Games During The Day And Study The E-Modules And Use It For Reading At Night Be It An Ebook On Your Laptop Or The All Time Bestsellers From Your Library. It can be used as a laptop desk, sofa desk, breakfast table, bed tray, bed table, and picnic table, gaming desk. beach table, portable office desk, lap tray for snacks, kids study desk, laptop desk, study table, workstation, standing desk, children desk, laptop table, kids lap desk, students writing table, laptop folding table and more.",
+        category : "Home & Living",
+        degree : 0,
+        link : "#"
+    },
+    {   
         name : "Samsung Galaxy M32 5G (Sky Blue, 8GB RAM, 128GB Storage)",
         image : "https://m.media-amazon.com/images/I/71os5DRhuSL._SL1500_.jpg",
         price : "2999$",
+        info : " MediaTek | Dimensity 720 Octa Core 2GHz Processor with the widest 12 band support for a True 5G experience 16.55 centimeters (6.5-inch) TFT - Infinity V-cut display, HD+ resolution, 720 X 1600 pixels protected by Gorilla Glass 5 Versatile Quad camera setup-48MP (F 1.8) main camera + 8MP (F2.2) Ultra wide camera+ 5MP (F2.4) depth camera + 2MP (2.4) Macro Camera| 13MP (F2.2) front camera Monster 5000 mAh Battery | Memory, Storage & SIM: Upto 12GB RAM Plus| 128GB internal memory expandable up to 1TB| SIM 1 + Hybrid (SIM or MicroSD) Latest Android v11.0, One UI 3.1 operating system, available right out of the box",
+        category : "Electronics",
+        degree : 0,
+        link : "#"
+    },
+    {   
+        name : "Samsung Galaxy S20 FE 5G (Cloud Navy, 8GB RAM, 128GB Storage) with No Cost EMI & Additional Exchange Offers",
+        image : "https://m.media-amazon.com/images/I/81vDZyJQ-4L._SL1500_.jpg",
+        price : "599$",
         info : " MediaTek | Dimensity 720 Octa Core 2GHz Processor with the widest 12 band support for a True 5G experience 16.55 centimeters (6.5-inch) TFT - Infinity V-cut display, HD+ resolution, 720 X 1600 pixels protected by Gorilla Glass 5 Versatile Quad camera setup-48MP (F 1.8) main camera + 8MP (F2.2) Ultra wide camera+ 5MP (F2.4) depth camera + 2MP (2.4) Macro Camera| 13MP (F2.2) front camera Monster 5000 mAh Battery | Memory, Storage & SIM: Upto 12GB RAM Plus| 128GB internal memory expandable up to 1TB| SIM 1 + Hybrid (SIM or MicroSD) Latest Android v11.0, One UI 3.1 operating system, available right out of the box",
         category : "Electronics",
         degree : 0,
@@ -31,6 +49,15 @@ const DealsData = [
     {   
         name : "AmazonBasics Memory Foam Travel Neck Pillow, Black",
         image : "https://m.media-amazon.com/images/I/81NWlTk5euL._SL1500_.jpg",
+        price : "899$",
+        info : " Prepare to feel pampered with this AmazonBasics memory foam neck pillow. The neck pillow wraps around the back and sides of the neck, propping up the head for relaxing support. Ideal for road trips and plane rides, the pillow promotes comfortable dozing or relaxation from a seated position-no need for neck pain or stiffness later. Arrive at your final destination feeling refreshed with help from the AmazonBasics memory foam neck pillow.",
+        category : "Travel",
+        degree : 0,
+        link : "#"
+    },
+    {   
+        name : "AmazonBasics Rolling Travel Duffel Bag Luggage with Wheels, Medium, Grey",
+        image : "https://m.media-amazon.com/images/I/91jMtwb8zWL._SL1500_.jpg",
         price : "49$",
         info : " Prepare to feel pampered with this AmazonBasics memory foam neck pillow. The neck pillow wraps around the back and sides of the neck, propping up the head for relaxing support. Ideal for road trips and plane rides, the pillow promotes comfortable dozing or relaxation from a seated position-no need for neck pain or stiffness later. Arrive at your final destination feeling refreshed with help from the AmazonBasics memory foam neck pillow.",
         category : "Travel",
@@ -40,7 +67,7 @@ const DealsData = [
     {   
         name : "Fire-Boltt Ninja 2 Max 1.5, Full Touch Display Smartwatch with SpO2",
         image : "https://m.media-amazon.com/images/I/61MLir0drXL._SL1500_.jpg",
-        price : "20.99$",
+        price : "28.99$",
         info : " Fire-Boltt Ninja 2 Max comes with a special 1.5 Full Touch Screen that supports complete capacitive and responsive touch interface for effortless control. With over 200+ Cloud Watch Faces, flaunt your style at each occasion. Fire-Boltt Ninja 2 Max Smartwatch has real time 24*7 SPO2 / Blood Oxygen tracking, Dynamic Heart Rate Monitoring. Enjoy tracking 20 Sports Mode- The smartwatch supports tracking of 20 sports, not even a single sweat gone waste!",
         category : "Gaming",
         degree : 0,
@@ -56,8 +83,26 @@ const DealsData = [
         link : "#"
     },
     {   
+        name : "VOODANIA Premium Brazuca Polyurethane Football With Pump, Size 5, (Multicolour)",
+        image : "https://m.media-amazon.com/images/I/5135Z2yqGBL.jpg",
+        price : "790$",
+        info : " MAGNETIC Alphabets and numbers for kids – Learning Educational Toys for Kids 3+ years - Make your child’s knowledge of spelling stick with the Magnetic Letters Set for Kids! With 143 Foam made alphabet magnets (capital & small letters), beautiful picture cards, phonics worksheets & more, learning to spell is F-U-N!",
+        category : "Sports & Outdoors",
+        degree : 0,
+        link : "#"
+    },
+    {   
         name : "Car Wax Drag Nano Fiber Car Wash Brush Car Dusting Tool Car Mop Wax Dash Duster",
         image : "https://m.media-amazon.com/images/I/714JdhC6IKS._SL1020_.jpg",
+        price : "49.99$",
+        info : " This Car Duster sucks up the dirt and dust easily and quickly. It has extendable or telescopic handle which is made of stainless steel with anti-slide sponge grip. This 360° cleaning car dust remover has long & dense brush bristle with super soft microfiber large dusting head. One Sweep and you're done! You don’t need to repeat your sweeps, it picks up the dust at one-go. It Keeps your car clean & shine without washing it on daily basis. Easy care, just shake it occasionally to get rid of excess dust on the duster Package include: 1 Set x Car Duster (Combo)",
+        category : "Vehicles",
+        degree : 0,
+        link : "#"
+    },
+    {   
+        name : "TPH Covers Armor Dog Proof Extra Strong & Custom Fit Car Cover with Premium Piping for Maruti Suzuki Swift New Model, Black",
+        image : "https://m.media-amazon.com/images/I/8117OoDkcpL._SL1500_.jpg",
         price : "49.99$",
         info : " This Car Duster sucks up the dirt and dust easily and quickly. It has extendable or telescopic handle which is made of stainless steel with anti-slide sponge grip. This 360° cleaning car dust remover has long & dense brush bristle with super soft microfiber large dusting head. One Sweep and you're done! You don’t need to repeat your sweeps, it picks up the dust at one-go. It Keeps your car clean & shine without washing it on daily basis. Easy care, just shake it occasionally to get rid of excess dust on the duster Package include: 1 Set x Car Duster (Combo)",
         category : "Vehicles",
@@ -94,6 +139,15 @@ const DealsData = [
     {   
         name : "TB Trybuy.in Exclusive Designer Army Green Cotton Solid Casual Shirt for Men",
         image : "https://m.media-amazon.com/images/I/71v0AuFlfcL._UL1500_.jpg",
+        price : "499.00$",
+        info : " Soft, Breathable, Casual, and Stylish Look smart in this plain shirt from the brand of TB. The stylish look enhances the overall appeal of this shirt. This shirt ensures great comfort all day long. This shirt can be best teamed with a pair of contrasting trousers or jeans. This shirt features a standard collar, a full buttoned placket, and full sleeves with buttoned cuffs. The length of the shirt has been kept in such a way that it can be tucked in or can be kept out. It will give an awesome look in both ways. Perfect for Your Casual Day Out Our stylish casual shirts are versatile pieces that will add a touch of chic to your dressy or casual looks. Pairing the plain shirt with a solid trouser, dress your look in this shirt. Various colors to match your closet for a modern and effortless fashion, these shirts will feel great, look great, and turn a few heads. Made of Breathable Cotton fabric to Facilitate Comfort while Wearing This shirt features high-quality fabric and good stitching details. High-grade fabric features the good capability of tenderness, air permeability, and moisture absorption feels soft and comfy. Suitable for Casual, business work, date, party, Perfect gift for a family member, friends, and boyfriend. Altogether, it forms a soft-touch fabric that keeps you relaxed and at-ease for no matter how long you carry this shirt. Fashionable Button-Down Shirt Made of lightweight cotton fabric that is soft and comfortable to the skin, which is very suitable for hot summer. The shirt is manufactured with classy button-down details with perfect stitching. Suitable for both casual and formal occasions in hot weather/summer, such as meetings and parties.",
+        category : "Fashion",
+        degree : 0,
+        link : "#"
+    },
+    {   
+        name : "Sersi by Eyescrush | 100% UVA UVB protected | Leopard printed trending retro fashion shades",
+        image : "https://m.media-amazon.com/images/I/61ri-RiVz3L._UL1500_.jpg",
         price : "499.00$",
         info : " Soft, Breathable, Casual, and Stylish Look smart in this plain shirt from the brand of TB. The stylish look enhances the overall appeal of this shirt. This shirt ensures great comfort all day long. This shirt can be best teamed with a pair of contrasting trousers or jeans. This shirt features a standard collar, a full buttoned placket, and full sleeves with buttoned cuffs. The length of the shirt has been kept in such a way that it can be tucked in or can be kept out. It will give an awesome look in both ways. Perfect for Your Casual Day Out Our stylish casual shirts are versatile pieces that will add a touch of chic to your dressy or casual looks. Pairing the plain shirt with a solid trouser, dress your look in this shirt. Various colors to match your closet for a modern and effortless fashion, these shirts will feel great, look great, and turn a few heads. Made of Breathable Cotton fabric to Facilitate Comfort while Wearing This shirt features high-quality fabric and good stitching details. High-grade fabric features the good capability of tenderness, air permeability, and moisture absorption feels soft and comfy. Suitable for Casual, business work, date, party, Perfect gift for a family member, friends, and boyfriend. Altogether, it forms a soft-touch fabric that keeps you relaxed and at-ease for no matter how long you carry this shirt. Fashionable Button-Down Shirt Made of lightweight cotton fabric that is soft and comfortable to the skin, which is very suitable for hot summer. The shirt is manufactured with classy button-down details with perfect stitching. Suitable for both casual and formal occasions in hot weather/summer, such as meetings and parties.",
         category : "Fashion",
