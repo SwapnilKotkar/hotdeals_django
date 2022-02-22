@@ -24,14 +24,14 @@ const DealDetails = () =>{
                         <img src={DealsData[5].image} className="img-fluid rounded-5" alt="..." style={{maxHeight:"50%", maxWidth:"50%"}}/>
                     </div>
                     <div className="col-12 col-sm-7">
-                        <div className="card-body d-flex flex-column p-4">
+                        <div className="card-body d-flex flex-column pt-4 px-4 pb-0">
                             <h5 className="card-title text-body">{DealsData[5].name}</h5>
-                            <p className="card-text text-body">{DealsData[5].info}</p>
-                            <div className="pb-2"><StarRating className="mb-2" size = "40"/></div>
+                            <p className="card-text text-body dealDetails-card-text my-1">{DealsData[5].info}</p>
+                            <div className="pb-2"><span className="dealDetails-rating-size"><StarRating/></span></div>
                             <div className="container mb-3">
                             <div className='col-12'>
                                 <NavLink to="/dealdetails">
-                                        <button className="col-12 btn btn-success deal-button"><span>{DealsData[5].price}</span></button>
+                                        <button className="col-12 btn btn-success deal-button"><span className='dealDetails-deal-button'>{DealsData[5].price}</span></button>
                                 </NavLink>
                             </div>
                         </div>
@@ -40,16 +40,16 @@ const DealDetails = () =>{
             </div>
         </div>       
         <div className="bg-white rounded shadow-sm p-4 mb-4">
-            <h5 className="mb-4">Customer Reviews</h5>
+            <h5 className="mb-4 fw-bold">Customer Reviews</h5>
             <div className='container'>
                 {reviews.map((val, index) => {
                     return (
                         <div className='mb-2 p-2'>
-                            <h4>{val.cust_name}</h4>
-                            <h6>{val.date}</h6>
+                            <h4 className='cust-name'>{val.cust_name}</h4>
+                            <h6 className='cust-review-date'>{val.date}</h6>
                             <StarRating className="mb-2" size = "30" key = {index} ratingValue = {val.cust_rating}/>
                             {/* <h5>{val.cust_rating}</h5> */}
-                            <p>{val.cust_review}</p>
+                            <p className='cust-review'>{val.cust_review}</p>
                         </div>
                     )
                 })}                   
@@ -63,7 +63,7 @@ const DealDetails = () =>{
                 </div>
                 <div className="form-group mb-2">
                     <label>Your Comment</label>
-                    <textarea className="form-control"></textarea>
+                    <textarea className="form-control" style={{height:"100px", boxShadow:"none"}}></textarea>
                 </div>
                 <div className="form-group">
                     <button className="btn btn-primary btn-md" type="submit"> Submit</button>

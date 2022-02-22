@@ -64,7 +64,7 @@ const Navbar = () =>{
     return(
         <>            
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-none" style={{fontSize:"15px"}}>
-            <div className="container-lg p-2">
+            <div className="container-lg p-2 px-sm-0">
             <NavLink className="navbar-brand" to="/">hotDeals</NavLink>
               <button className="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i className="fas fa-bars"></i>
@@ -73,7 +73,7 @@ const Navbar = () =>{
                 <ul className="navbar-nav">
                   <Menu/>
                   <li>
-                    <NavLink className="nav-link p-0 mx-lg-2" to="/submitdeal"><button className="btn btn-primary rounded-3" type="submit" ><span className="text-capitalize" style={{fontSize:"14px"}}>Submit Deal</span></button></NavLink>                
+                    <NavLink className="nav-link p-0 " to="/submitdeal"><button className="btn btn-primary rounded-3" type="submit" ><span className="text-capitalize" style={{fontSize:"14px"}}>Submit Deal</span></button></NavLink>                
                   </li>
                 </ul>          
               </div>

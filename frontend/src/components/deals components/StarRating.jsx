@@ -2,7 +2,7 @@ import { FaStar } from 'react-icons/fa';
 import React, {useState} from 'react'
 
 const StarRating = (props) => {
-    const [rating, setRating] = useState(null);
+    const [rating, setRating] = useState(5);
     const [hover, setHover] = useState(null);
     return (
         <div>
