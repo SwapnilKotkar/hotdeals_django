@@ -152,10 +152,10 @@ code {
 	border-radius: 3px;
 }
 .signup-form {
-	width: 450px;
+	max-width: 450px;
 	margin: 0 auto;
 	padding: 30px 0;
-  	font-size: 15px;
+  font-size: 15px;
 }
 .signup-form h2 {
 	color: #636363;
@@ -337,6 +337,38 @@ footer {
 }
 /* -------------------------------Footer css starts here ------------------------------------ */
 
+@media screen and (max-width: 991px) {
+  .list-card{
+    width: 95% ;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .hot-btn{
+    max-width: 80px;
+    justify-content: start !important;
+  }
+  .new-btn{
+    max-width: 80px;
+    justify-content: start !important;
+  }
+  .category-btn{
+    justify-content: end !important;
+  }
+  .view-btn{
+    display: none !important;
+  }
+  .search-bar{
+    margin-bottom: 5px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+
+}
+
 
  @media screen and (max-width: 480px) {
   .view-btn{
@@ -372,7 +404,7 @@ footer {
   .list-card-title{
       font-size: 11px;
       line-height: 20px;
-      max-height: 45px; /* line-height * 3 */
+      max-height: 40px; /* line-height * 3 */
       overflow: hidden;
   }
   .list-card-text{

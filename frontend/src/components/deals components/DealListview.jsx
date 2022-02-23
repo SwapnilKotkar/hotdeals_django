@@ -5,7 +5,7 @@ import StarRating from './StarRating';
 const DealListview = (props) => {
   return(
    <>
-      <div className="list-card card mb-3 list-card">
+      <div className="card mb-3 list-card">
         <div className="row h-100">
           <div className="col-3 h-100 p-0 d-flex justify-content-center align-items-center">
             <div style={{maxHeight:"100%", maxWidth:"50%"}}>

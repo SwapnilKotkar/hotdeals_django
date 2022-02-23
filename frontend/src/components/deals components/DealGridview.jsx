@@ -19,7 +19,7 @@ const DealGridview = (props) => {
                         <div className="degree-icons col-3 d-flex justify-content-center" style={{color: "green", cursor:"pointer", fontWeight:"bold"}}>+</div>
                     </div>
                 </div>
-                <h5 className="grid-card-title card-title text-body">{props.dealName}</h5>
+                <h5 className="grid-card-title card-title text-body fw-bold">{props.dealName}</h5>
                 <p className="grid-card-text card-text mb-2">{props.dealInfo}</p>
                 <StarRating size = "25"/>
             </div>

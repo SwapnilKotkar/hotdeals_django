@@ -59,7 +59,7 @@ const UserLoginPage = () => {
             <div className="container d-flex justify-content-center mb-4">
                 <span className="fs-3 fw-bolder" style={{fontWeight:"400", color:"black"}}>Sign in to account</span>
                 </div>
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center px-3">
                 <form method="POST" className='rounded-5' onSubmit={handleSubmit(onSubmit)} style={{backgroundColor:"white", color:"black", fontWeight:"500"}}>
                     <div className="form-group">
                         <label>Username</label>

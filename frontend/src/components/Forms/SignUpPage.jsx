@@ -57,11 +57,11 @@ let SignUpPage = () => {
     
     return(
         <>
-            <div className="container signup-form d-flex flex-column justify-content-center" >
-                <div className="d-flex justify-content-center mb-4 p-0">
+            <div className="container-fluid signup-form d-flex flex-column justify-content-center align-items-center" >
+                <div className="container-fluid d-flex justify-content-center mb-4 p-0">
                 <span className="fs-3 fw-bolder" style={{fontWeight:"400", color:"black"}}>Create an account</span>
                 </div>
-                <div className="container-fluid d-flex justify-content-center p-0 m-0">
+                <div className="container d-flex justify-content-center px-3">
                     <form method="POST" className="rounded-5" onSubmit={handleSubmit(onSubmit)} noValidate style={{color:"black", fontWeight:"500"}}>
                         <div className="form-group">
                             <label>First Name</label>
@@ -92,7 +92,7 @@ let SignUpPage = () => {
                         <div className="text-center mt-3">Already have an account? <NavLink to="/userlogin"><span style={{color:"blue" }} >Sign in</span></NavLink></div>
                         <hr className="container"/>
 
-                        <div className="container-sm d-flex justify-content-center" >
+                        <div className="container-fluid d-flex justify-content-center p-0" >
                             <NavLink to="/" className="nav-link p-2 " style={{color:"blue"}}>Home</NavLink>
                             <NavLink className="nav-link p-2 " style={{color:"blue"}} to="/userlogin">User Login</NavLink>
                             <NavLink to="/adminlogin" className="nav-link p-2 " style={{color:"blue"}}>Admin Login</NavLink>

@@ -63,12 +63,12 @@ const DealSubmit = () =>{
     return(
         <>
             <Navbar/>
-            <div className="container d-flex flex-column justify-content-center p-4" >
+            <div className="container d-flex flex-column justify-content-center p-4 px-2" >
                 <div className="container d-flex justify-content-center mb-4">
                 <span className="fs-3 fw-bolder" style={{fontWeight:"400", color:"black"}}>Submit your deal</span>
                 </div>
-                <div className="container d-flex justify-content-center">
-                <form method="POST" className="rounded-5 p-lg-5 p-4 shadow-2-soft" onSubmit={handleSubmit(onSubmit)} noValidate style={{color:"black", fontWeight:"500", backgroundColor:"white"}}>
+                <div className="container-fluid d-flex justify-content-center p-0">
+                <form method="POST" className="rounded-5 p-4 shadow-2-soft" onSubmit={handleSubmit(onSubmit)} noValidate style={{color:"black", fontWeight:"500", backgroundColor:"white"}}>
                  <div className="form-group">
                     <label>Deal link</label>
                     <input type="url" className="form-control rounded-5" name="dealLink" ref={register({ required: "link is required" })} value={deal.dealLink} onChange={handleChange} />

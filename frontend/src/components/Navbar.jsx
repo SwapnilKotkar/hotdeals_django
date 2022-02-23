@@ -64,7 +64,7 @@ const Navbar = () =>{
     return(
         <>            
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-none" style={{fontSize:"15px"}}>
-            <div className="container-lg p-2 px-sm-0">
+            <div className="container-lg p-2 px-sm-2 px-lg-0">
             <NavLink className="navbar-brand" to="/">hotDeals</NavLink>
               <button className="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i className="fas fa-bars"></i>

@@ -20,18 +20,18 @@ const DealDetails = () =>{
         <div className='container-lg p-3'>
             <div className="card mb-3">
                 <div className="row g-0">
-                    <div className="col-12 col-sm-5 d-flex justify-content-center align-items-center">
-                        <img src={DealsData[5].image} className="img-fluid rounded-5" alt="..." style={{maxHeight:"50%", maxWidth:"50%"}}/>
+                    <div className="col-12 col-md-5 col-sm-12 d-flex justify-content-center align-items-center">
+                        <img src={DealsData[12].image} className="img-fluid rounded-5" alt="..." style={{maxHeight:"70%", maxWidth:"70%"}}/>
                     </div>
-                    <div className="col-12 col-sm-7">
+                    <div className="col-12 col-md-7 col-sm-12">
                         <div className="card-body d-flex flex-column pt-4 px-4 pb-0">
-                            <h5 className="card-title text-body">{DealsData[5].name}</h5>
-                            <p className="card-text text-body dealDetails-card-text my-1">{DealsData[5].info}</p>
+                            <h5 className="card-title text-body fw-bold">{DealsData[12].name}</h5>
+                            <p className="card-text text-body dealDetails-card-text my-1">{DealsData[12].info}</p>
                             <div className="pb-2"><span className="dealDetails-rating-size"><StarRating/></span></div>
-                            <div className="container mb-3">
+                            <div className="container-fluid mb-3">
                             <div className='col-12'>
                                 <NavLink to="/dealdetails">
-                                        <button className="col-12 btn btn-success deal-button"><span className='dealDetails-deal-button'>{DealsData[5].price}</span></button>
+                                        <button className="col-12 btn btn-success deal-button"><span className='dealDetails-deal-button'>{DealsData[12].price}</span></button>
                                 </NavLink>
                             </div>
                         </div>
@@ -41,10 +41,10 @@ const DealDetails = () =>{
         </div>       
         <div className="bg-white rounded shadow-sm p-4 mb-4">
             <h5 className="mb-4 fw-bold">Customer Reviews</h5>
-            <div className='container'>
+            <div className='container-fluid'>
                 {reviews.map((val, index) => {
                     return (
-                        <div className='mb-2 p-2'>
+                        <div className='mb-1 p-1'>
                             <h4 className='cust-name'>{val.cust_name}</h4>
                             <h6 className='cust-review-date'>{val.date}</h6>
                             <StarRating className="mb-2" size = "30" key = {index} ratingValue = {val.cust_rating}/>
