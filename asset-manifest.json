@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/hotdeals_django/static/css/main.a305d39d.css",
-    "main.js": "/hotdeals_django/static/js/main.52afe4c5.js",
+    "main.css": "/hotdeals_django/static/css/main.932902b9.css",
+    "main.js": "/hotdeals_django/static/js/main.e2a6e7cd.js",
     "index.html": "/hotdeals_django/index.html",
-    "main.a305d39d.css.map": "/hotdeals_django/static/css/main.a305d39d.css.map",
-    "main.52afe4c5.js.map": "/hotdeals_django/static/js/main.52afe4c5.js.map"
+    "main.932902b9.css.map": "/hotdeals_django/static/css/main.932902b9.css.map",
+    "main.e2a6e7cd.js.map": "/hotdeals_django/static/js/main.e2a6e7cd.js.map"
   },
   "entrypoints": [
-    "static/css/main.a305d39d.css",
-    "static/js/main.52afe4c5.js"
+    "static/css/main.932902b9.css",
+    "static/js/main.e2a6e7cd.js"
   ]
 }
