@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { MdDelete } from "react-icons/md";
 import StarRating from './StarRating';
 
 const DealListview = (props) => {
@@ -7,14 +8,14 @@ const DealListview = (props) => {
    <>
       <div className="card mb-3 list-card">
         <div className="row h-100">
-          <div className="col-3 h-100 p-0 d-flex justify-content-center align-items-center">
+          <div className="col-4 h-100 p-0 d-flex justify-content-center align-items-center">
             <div style={{maxHeight:"100%", maxWidth:"50%"}}>
               <NavLink to="/dealdetails">
                 <img src={props.dealImage} className="card-img" alt="dealpictures"/>
               </NavLink>
             </div>
           </div>
-          <div className="col-9 p-0 list-card-body card-body d-flex justify-content-between flex-column justify-content-evenly">
+          <div className="col-8 p-0 list-card-body card-body d-flex justify-content-between flex-column justify-content-evenly">
               <div style={{padding:"10px 10px 0 0"}}>
                 <div className="col-12 mb-2">
                     <div className="col-sm-3 col-5 d-flex border border-2 rounded-2">

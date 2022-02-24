@@ -13,8 +13,6 @@ const DealsPage = () => {
 
     const [view, setView] = useState("list");
 
-    const [degree, setDegree] = useState(0);
-
     const filterItem = (itemCategory) =>{
 
       if(itemCategory === "all"){
@@ -33,18 +31,11 @@ const DealsPage = () => {
       return;
     }
 
-    const handleDegree = (value) => {
-      if(value === "add"){
-        setDegree(degree + 1);
-      }else if(value === "minus"){
-        setDegree(degree - 1);
-      }
-    }
 
     return (
         <>
             <DealsSearchBar filterItem = {filterItem} catItems={catItems} viewEvent={viewEvent}/>
-            <Deals deals={deals} view={view} handleDegree={handleDegree} degree={degree} />
+            <Deals deals={deals} view={view} />
         </>
     )
 }

@@ -1,21 +1,19 @@
 import DealsCard from "./DealsCard";
-// import DealsData from "./DealsData";
 
-//row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 
-const Deals = ({deals,handleDegree, degree, view}) =>{
+const Deals = ({deals, view}) =>{
 
     if(view === "list"){
         return(
             <>
-                 <div className="container-lg p-4">
-                <div className="row d-flex justify-content-center"> 
-                    {deals.map((val, index) => {
-                        return (
-                                    <DealsCard key={index} index={index} view={view} dealName={val.name} dealImage={val.image} dealPrice={val.price} dealInfo={val.info} dealLink ={val.link} handleDegree={handleDegree} degree={degree} />
-                               )
-                    })}
-                </div>
-            </div>   
+                <div className="container-lg p-4">
+                    <div className="row d-flex justify-content-center"> 
+                        {deals.map((val, index) => {
+                            return (
+                                    <DealsCard key={index} index={index} view={view} dealName={val.name} dealImage={val.image} dealPrice={val.price} dealInfo={val.info} dealLink ={val.link} />
+                                )
+                        })}
+                    </div>
+                </div>   
             </>
         )
     }else if(view === "grid"){
@@ -25,8 +23,8 @@ const Deals = ({deals,handleDegree, degree, view}) =>{
                     <div className="row row-cols-1 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4"> 
                         {deals.map((val, index) => {
                             return (
-                                <DealsCard key={index} index={index} view={view} dealName={val.name} dealImage={val.image} dealPrice={val.price} dealInfo={val.info} dealLink ={val.link} handleDegree={handleDegree} degree={degree} />
-                                    )
+                                    <DealsCard key={index} index={index} view={view} dealName={val.name} dealImage={val.image} dealPrice={val.price} dealInfo={val.info} />
+                                )
                         })}
                     </div>
                 </div>                        

@@ -1,5 +1,4 @@
 
-
 const DealsData = [
     {   
         name : "Dews Furniture Sheesham Wood 6 Seater Standard Sofa Set for Living Room | 6 Seater",

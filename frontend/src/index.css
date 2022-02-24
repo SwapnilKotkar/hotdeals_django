@@ -242,7 +242,11 @@ code {
 
 /* -------------------------------user Home page css starts here ------------------------------------ */
 
-.account-settings .user-profile {
+.usermenu:hover{
+  color: blue;
+}
+
+/* .account-settings .user-profile {
   margin: 0 0 1rem 0;
   padding-bottom: 1rem;
   text-align: center;
@@ -285,7 +289,7 @@ code {
   font-size: .825rem;
   background: #ffffff;
   color: #2e323c;
-}
+} */
 /* -------------------------------user Home page css ends here ------------------------------------ */
 
 
@@ -440,6 +444,9 @@ footer {
   }
   .cust-review{
     font-size: 14px;
+  }
+  .usermenu{
+    font-size: 11px;
   }
   .footer_columns{
     flex-direction: column;
