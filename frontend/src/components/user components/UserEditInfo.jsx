@@ -58,9 +58,9 @@ const UserEditInfo = () => {
 
     return (
             <>
-                <div className='col-12 d-flex justify-content-center'><div className='col-11 col-sm-9'><span className='fs-5 fw-bold text-body'>Edit Info</span></div></div>
+                <div className='col-12 d-flex justify-content-center p-3'><div className='col-12'><span className='fs-5 fw-bold text-body'>Edit Info</span></div></div>
                 <div className='col-12 d-flex justify-content-center  py-4'>
-                    <form method="POST" className="col-11 col-lg-7 col-sm-10 rounded-5" onSubmit={handleSubmit(onSubmit)} noValidate style={{color:"black", fontWeight:"500"}}>
+                    <form method="POST" className="col-10 col-lg-7 col-sm-8 rounded-5" onSubmit={handleSubmit(onSubmit)} noValidate style={{color:"black", fontWeight:"500"}}>
                         <div className="form-group">
                             <label>First Name</label>
                             <input type="text" className="form-control rounded-5 rounded-5" name="first_name" ref={register({ required: "first name is required" })} value={values.first_name} onChange={handleChange} />

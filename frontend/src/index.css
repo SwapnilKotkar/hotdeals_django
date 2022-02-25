@@ -242,10 +242,6 @@ code {
 
 /* -------------------------------user Home page css starts here ------------------------------------ */
 
-.usermenu:hover{
-  color: blue;
-}
-
 /* .account-settings .user-profile {
   margin: 0 0 1rem 0;
   padding-bottom: 1rem;
@@ -368,12 +364,6 @@ footer {
   }
 }
 
-
-@media screen and (max-width: 767px) {
-
-}
-
-
  @media screen and (max-width: 480px) {
   .view-btn{
     display: none !important;
@@ -446,7 +436,7 @@ footer {
     font-size: 14px;
   }
   .usermenu{
-    font-size: 11px;
+    font-size: 10px;
   }
   .footer_columns{
     flex-direction: column;
