@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import DealsCard from '../deals components/DealsCard';
 import UserDealsData from './UserDealsData';
 
 const UserSubmittedDeals = () => {
@@ -14,8 +13,8 @@ const UserSubmittedDeals = () => {
                 <div className="container-fluid row d-flex justify-content-center py-3 m-0"> 
                     {deals.map((val, index) => {
                         return (
-                            <div className="container-fluid d-flex justify-content-center p-0">
-                                <div className="w-100 card mb-3 list-card border shadow-none" key={index}>
+                            <div className="container-fluid d-flex justify-content-center p-0" key={index}>
+                                <div className="w-100 card mb-3 list-card border shadow-none">
                                     <div className="row h-100">
                                         <div className="col-4 h-100 p-0 d-flex justify-content-center align-items-center">
                                             <div style={{maxHeight:"100%", maxWidth:"50%"}}>

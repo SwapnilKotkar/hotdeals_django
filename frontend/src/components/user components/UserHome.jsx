@@ -5,6 +5,7 @@ import UserSubmittedDeals from './UserSubmittedDeals';
 import UserVotedDeals from './UserVotedDeals';
 import { useState } from 'react';
 
+
 const UserHome = () => {
 
     const [value, setValue] = useState({
@@ -41,9 +42,12 @@ const UserHome = () => {
         <>
             <Navbar />
             <div className='container-lg my-3 p-0'>
-                <div className='bg-white shadow shadow-3 rounded-4 py-3 px-4 mb-3 '>
-                    <div>
+                <div className='col-12 d-flex bg-white shadow shadow-3 rounded-4 py-3 px-4 mb-3 '>
+                    <div className='col-6'>
                         <span className='fs-3 fw-bold'>Welcome <span className='text-success'>User</span></span>
+                    </div>
+                    <div className='col-6 d-flex justify-content-end align-items-center'>
+                        <span className='fs-6 fw-bold text-muted fst-italic'>user@gmail.com</span>
                     </div>
                 </div>
                 <div className='col-12 d-flex flex-column flex-lg-row justify-content-between p-0'>

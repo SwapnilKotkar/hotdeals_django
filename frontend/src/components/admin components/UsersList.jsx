@@ -1,61 +1,77 @@
 import React from 'react';
-import { FaRegTrashAlt } from 'react-icons/fa';
+// import { FaRegTrashAlt } from 'react-icons/fa';
 
 const UsersList = () => {
+
+        const userList = [
+            {
+                no:1,
+                username:"sam",
+                email:"sam@gmail.com",
+                deals:"2"
+            },
+            {
+                no:2,
+                username:"reena",
+                email:"reena@gmail.com",
+                deals:"4"
+            },
+            {
+                no:3,
+                username:"tim",
+                email:"tim@gmail.com",
+                deals:"1"
+            },
+            {
+                no:4,
+                username:"rock",
+                email:"rock@gmail.com",
+                deals:"6"
+            },
+            {
+                no:5,
+                username:"rock",
+                email:"rock@gmail.com",
+                deals:"6"
+            }
+        ]
+
   return (
-      <>
-          <div className="accordion-item p-2">
-                <h2 className="accordion-header" id="flush-headingOne">
-                <button className="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                <span className="fs-5">Users list</span>
-                </button>
-                </h2>
-                <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-mdb-parent="#accordionFlushExample">
-                    <div className="accordion-body p-0">
-                        <div className='container-lg col-12 col-sm-4 p-2'>
-                            <form className="d-flex">
-                                <input className="form-control me-2 rounded-3" type="search" placeholder="Search a user" aria-label="Search" />
-                                <button className="btn btn-primary rounded-3" type="submit"><span className="text-capitalize" style={{fontSize:"14px"}}>Search</span></button>
-                            </form>
-                        </div>
-                        <table className="table table-hover table-striped align-middle text-center mb-0">
-                            <thead className="table-dark">
+            <>
+                <div className=''>
+                    <div className='col-12 d-flex justify-content-center p-3'><div className='col-12'><span className='fs-5 fw-bold text-body'>User List</span></div></div>  
+                    <div className='table-responsive'>
+                        <table className="table align-middle table-striped table-hover">
+                            <thead className='table-dark'>
                                 <tr>
-                                    <th className="col-1 col-md-2" scope="col">No.</th>
-                                    <th className="col-7 col-md-7" scope="col">Customers names</th>
-                                    <th className="col-4 col-md-3" scope="col">Actions</th>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Email ID</th>
+                                    <th scope="col">Deal Submitted</th>
+                                    <th scope="col">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>
-                                <button className="btn btn-danger mx-1"><FaRegTrashAlt size={15}/></button>
-                                </td>
-                                </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>
-                                <button className="btn btn-danger mx-1"><FaRegTrashAlt size={15}/></button>
-                                </td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>
-                                <button className="btn btn-danger mx-1"><FaRegTrashAlt size={15}/></button>
-                                </td>
-
-                                
-                                </tr>
+                                {userList.map((val, index)  => {
+                                    return(
+                                        <tr key={index}>
+                                            <th scope="row">{val.no}</th>
+                                            <td>{val.username}</td>
+                                            <td>{val.email}</td>
+                                            <td>{val.deals}</td>
+                                            <td>
+                                                <button type="button" className="btn btn-danger btn-sm px-3">
+                                                    <i className="fas fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    )
+                                })}
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
-      </>
+            </>
   );
 };
 

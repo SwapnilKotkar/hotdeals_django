@@ -345,6 +345,9 @@ footer {
 
 
 @media screen and (max-width: 767px) {
+  .usermenu{
+    font-size: 14px;
+  }
   .hot-btn{
     max-width: 80px;
     justify-content: start !important;
@@ -365,6 +368,9 @@ footer {
 }
 
  @media screen and (max-width: 480px) {
+   .mail{
+     font-size: 12px !important;
+   }
   .view-btn{
     display: none !important;
   }
@@ -436,7 +442,7 @@ footer {
     font-size: 14px;
   }
   .usermenu{
-    font-size: 10px;
+    font-size: 12px;
   }
   .footer_columns{
     flex-direction: column;

@@ -72,6 +72,12 @@ const Navbar = () =>{
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                   <Menu/>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/userhome">User home</NavLink>
+                  </li>
+                  <li className="nav-item">
+                      <NavLink className="nav-link" to="/adminhome">Admin home</NavLink>
+                  </li>
                   <li>
                     <NavLink className="nav-link p-0 " to="/submitdeal"><button className="btn btn-primary rounded-3" type="submit" ><span className="text-capitalize" style={{fontSize:"14px"}}>Submit Deal</span></button></NavLink>                
                   </li>

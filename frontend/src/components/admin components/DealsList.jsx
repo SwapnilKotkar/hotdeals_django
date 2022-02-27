@@ -1,62 +1,73 @@
 import React from 'react';
-import { FaRegTrashAlt } from 'react-icons/fa';
-import { GrUpload } from "react-icons/gr";
+import {MdDelete} from 'react-icons/md';
+import {MdUpload} from 'react-icons/md';
 
 const DealsList = () => {
-  return (
-      <>
-          <div class="accordion-item p-2">
-                <h2 class="accordion-header" id="flush-headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        <span className="fs-5">Deals list</span>
-                    </button>
-                </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-mdb-parent="#accordionFlushExample">
-                    <div class="accordion-body p-0">
-                        <div className='container-lg col-12 col-sm-4 p-2'>
-                            <form className="d-flex">
-                                <input className="form-control me-2 rounded-3" type="search" placeholder="Search a deal" aria-label="Search" />
-                                <button className="btn btn-primary rounded-3" type="submit"><span className="text-capitalize" style={{fontSize:"14px"}}>Search</span></button>
-                            </form>
-                        </div>
-                        <table class="table table-bordered table-hover align-middle text-center mb-0">
-                            <thead className="table-warning">
-                                <tr>
-                                <th className="col-1 col-md-2" scope="col">No.</th>
-                                <th className="col-7 col-md-7" scope="col">Deals names</th>
-                                <th className="col-4 col-md-3" scope="col">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>
-                                <button className="btn btn-danger m-1"><FaRegTrashAlt size={15}/></button>
-                                <button className="btn btn-success m-1"><GrUpload size={15}/></button>
-                                </td>
-                                </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>
-                                <button className="btn btn-danger m-1"><FaRegTrashAlt size={15}/></button>
-                                <button className="btn btn-success m-1"><GrUpload size={15}/></button>
-                                </td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>
-                                <button className="btn btn-danger m-1"><FaRegTrashAlt size={15}/></button>
-                                <button className="btn btn-success m-1"><GrUpload size={15}/></button>
-                                </td>                                
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+    const userList = [
+        {
+            no:1,
+            dealname:"Samsung Mobile",
+            uploadedby:"sam@gmail.com",
+            degree:"200"
+        },
+        {
+            no:2,
+            dealname:"ASUS PC",
+            uploadedby:"reena@gmail.com",
+            degree:"169"
+        },
+        {
+            no:3,
+            dealname:"Cricket Set",
+            uploadedby:"tim@gmail.com",
+            degree:"488"
+        },
+        {
+            no:4,
+            dealname:"Cosmetics",
+            uploadedby:"rock@gmail.com",
+            degree:"765"
+        }
+    ]
+
+return (
+  <>
+            <div className=''>
+                <div className='col-12 d-flex justify-content-center p-3'><div className='col-12'><span className='fs-5 fw-bold text-body'>All Deals</span></div></div>  
+                <div className='table-responsive'>
+                    <table className="table align-middle table-striped table-hover">
+                        <thead className='table-dark'>
+                            <tr>
+                                <th scope="col">No.</th>
+                                <th scope="col">Dealname</th>
+                                <th scope="col">Uploaded by</th>
+                                <th scope="col">Degree</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {userList.map((val, index)  => {
+                                return(
+                                    <tr key={index}>
+                                        <th scope="row">{val.no}</th>
+                                        <td>{val.dealname}</td>
+                                        <td>{val.uploadedby}</td>
+                                        <td><span className='text-success fw-bold'>{val.degree}</span></td>
+                                        <td>
+                                            <button type="button" className="btn btn-danger btn-sm px-3 m-1">
+                                                <MdDelete size="20px"/>
+                                            </button>
+                                            <button type="button" className="btn btn-success btn-sm px-3 m-1">
+                                                <MdUpload size="20px" color='white'/>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </table>
                 </div>
-            </div>            
+            </div>
       </>
   );
 };
