@@ -39,7 +39,17 @@ const UsersList = () => {
   return (
             <>
                 <div className=''>
-                    <div className='col-12 d-flex justify-content-center p-3'><div className='col-12'><span className='fs-5 fw-bold text-body'>User List</span></div></div>  
+                    <div className='col-12 d-flex justify-content-center p-3 border-bottom border-5'><div className='col-12'><span className='fs-5 fw-bold text-body'>User List</span></div></div>  
+                    <div className='col-12 d-flex justify-content-center p-2'>
+                        <div className='col-8 col-sm-6 d-flex justify-content-center'>
+                            <div className="input-group rounded">
+                                <input type="search" className="form-control border rounded-start" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+                                <span className="input-group-text border-0 bg-primary" id="search-addon">
+                                    <i className="fas fa-search" style={{cursor:"pointer", color:"white"}}></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                     <div className='table-responsive'>
                         <table className="table align-middle table-striped table-hover">
                             <thead className='table-dark'>

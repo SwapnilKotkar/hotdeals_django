@@ -51,7 +51,7 @@ const UserHome = () => {
                     </div>
                 </div>
                 <div className='col-12 d-flex flex-column flex-lg-row justify-content-between p-0'>
-                    <div className='col-12 col-lg-3 col-md-12 col-sm-12'>
+                    <div className='col-12 col-lg-3 col-md-12 col-sm-12 menus'>
                         <div className='col-12 col-md-12 col-lg-11 bg-white h-100 shadow shadow-3 rounded-4'>
                             <div className="list-group list-group-flush col-12 d-flex flex-row flex-lg-column flex-md-row flex-sm-row">
                                 <button className="list-group-item list-group-item-action active d-flex justify-content-center justify-content-lg-start align-items-center usermenu text-center text-sm-start rounded-3" data-bs-toggle="list" onClick={()=> handleChange("editInfo")}>Edit Profile</button>

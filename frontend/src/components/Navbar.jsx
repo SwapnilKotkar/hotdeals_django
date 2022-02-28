@@ -12,9 +12,6 @@ const Navbar = () =>{
       if(userStatus === "user") {
         return(
           <>
-            <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
-            </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">User</a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -28,9 +25,6 @@ const Navbar = () =>{
       else if(adminStatus === "admin") {
         return(
           <>
-            <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
-            </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">Admin</a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -44,9 +38,6 @@ const Navbar = () =>{
       else{
        return(
         <>
-        <li className="nav-item">
-            <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
-        </li>
         <li className="nav-item">
             <NavLink className="nav-link" to="/adminlogin">Admin Login</NavLink>
         </li> 
@@ -71,6 +62,9 @@ const Navbar = () =>{
               </button>
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
+                  <li className="nav-item">
+                    <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
+                </li>
                   <Menu/>
                   <li className="nav-item">
                     <NavLink className="nav-link" to="/userhome">User home</NavLink>

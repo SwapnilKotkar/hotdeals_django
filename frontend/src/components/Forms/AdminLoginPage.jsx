@@ -61,36 +61,35 @@ const AdminLoginPage = () => {
     return(
         <>
             <div className="login-form">
-            <div className="container d-flex justify-content-center mb-4">
-                <span className="fs-3 fw-bolder" style={{fontWeight:"400", color:"black"}}>Sign in to an account</span>
+                <div className="container d-flex justify-content-center mb-4">
+                    <span className="fs-3 fw-bolder text-black">Admin Sign in</span>
                 </div>
-                <div className="d-flex justify-content-center px-3">
-                <form method="POST" className='rounded-5' onSubmit={handleSubmit(onSubmit)} style={{backgroundColor:"white", color:"black", fontWeight:"500"}}>
-                    <div className="form-group">
-                        <label>Username</label>
-                        <input type="email" className="form-control rounded-5" name="email" placeholder="Email" ref={register({ required: "Email is required", pattern: { value: /\S+@\S+\.\S+/i, message: "This is not a valid email" }})} value={adminLogin.email} onChange={handleChange} />
-                        <p className="warning">{errors.email?.message}</p>
-                    </div>
-                    <div className="form-group">
+                <div className="d-flex justify-content-center">
+                    <form method="POST" className='rounded-5 py-6 px-4 m-0 bg-white text-black' onSubmit={handleSubmit(onSubmit)} style={{fontWeight:"500"}}>
+                        <div className="form-group">
+                            <label>Username</label>
+                            <input type="email" className="form-control rounded-5" name="email" placeholder="Email" ref={register({ required: "Email is required", pattern: { value: /\S+@\S+\.\S+/i, message: "This is not a valid email" }})} value={adminLogin.email} onChange={handleChange} />
+                            <p className="warning">{errors.email?.message}</p>
+                        </div>
+                        <div className="form-group">
                             <label>Password</label>
                             <input type="password" className="form-control rounded-5" name="password" placeholder="Password" ref={register({ required: "password is required" })} value={adminLogin.password} onChange={handleChange} />
                             <p className="warning">{errors.password?.message}</p>
-                    </div>   
-                    <div className="clearfix mb-2">
-                        <label className="float-left form-check-label p-1"><input type="checkbox" required /> Remember me</label>
-                        <a href={link} className="float-right text-primary">Forgot Password?</a>
-                    </div>       
-                    <div className="form-group">
-                        <button type="submit" className="container btn btn-primary btn-block login-btn"><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}>Sign in</span></button>
-                    </div>
-                    
-                    <div className="hint-text mt-3">Don't have an account? <NavLink to="/signup" className="text-primary">Register Now!</NavLink></div>     
-                <hr className="container m-0"/>
-                    <div className="container-sm d-flex justify-content-center">
-                        <NavLink to="/" className="nav-link p-2 text-primary">Home</NavLink>
-                        <NavLink to="/userlogin" className="nav-link p-2 text-primary">User Login</NavLink>
-                </div>           
-                </form>        
+                        </div>   
+                        <div className="clearfix mb-2">
+                            <label className="float-left form-check-label p-1"><input type="checkbox" required /> Remember me</label>
+                            <a href={link} className="float-right text-primary">Forgot Password?</a>
+                        </div>       
+                        <div className="form-group">
+                            <button type="submit" className="container btn btn-primary btn-block login-btn"><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}>Sign in</span></button>
+                        </div>
+                        <div className="hint-text mt-3">Don't have an account? <NavLink to="/signup" className="text-primary">Register Now!</NavLink></div>     
+                        <hr className="container m-0"/>
+                        <div className="container-sm d-flex justify-content-center">
+                            <NavLink to="/" className="nav-link p-2 text-primary">Home</NavLink>
+                            <NavLink to="/userlogin" className="nav-link p-2 text-primary">User Login</NavLink>
+                        </div>           
+                    </form>        
                 </div>
             </div>            
         </>

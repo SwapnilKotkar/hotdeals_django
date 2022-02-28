@@ -60,7 +60,7 @@ const UserEditInfo = () => {
 
     return (
             <>
-                <div className='col-12 d-flex justify-content-start p-3'><div className=''><span className='fs-5 fw-bold text-body p-1'>Edit Info</span></div><div><span className='p-1'><BsPenFill fontSize="20px"/></span></div></div>
+                <div className='col-12 d-flex justify-content-start p-3 border-bottom border-5'><div className=''><span className='fs-5 fw-bold text-body p-1'>Edit Info</span></div><div><span className='p-1'><BsPenFill fontSize="20px"/></span></div></div>
                 <div className='col-12 d-flex justify-content-center  py-4'>
                     <form method="POST" className="col-10 col-lg-7 col-sm-8 rounded-5" onSubmit={handleSubmit(onSubmit)} noValidate style={{color:"black", fontWeight:"500"}}>
                         <div className="form-group">

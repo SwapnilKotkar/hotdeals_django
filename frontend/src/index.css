@@ -1,10 +1,7 @@
 body {
   background-color: #EDEDED !important;
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -242,50 +239,7 @@ code {
 
 /* -------------------------------user Home page css starts here ------------------------------------ */
 
-/* .account-settings .user-profile {
-  margin: 0 0 1rem 0;
-  padding-bottom: 1rem;
-  text-align: center;
-}
-.account-settings .user-profile .user-avatar {
-  margin: 0 0 1rem 0;
-}
-.account-settings .user-profile .user-avatar img {
-  width: 90px;
-  height: 90px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  border-radius: 100px;
-}
-.account-settings .user-profile h5.user-name {
-  margin: 0 0 0.5rem 0;
-}
-.account-settings .user-profile h6.user-email {
-  margin: 0;
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: #9fa8b9;
-}
-.account-settings .about {
-  margin: 2rem 0 0 0;
-  text-align: center;
-}
-.account-settings .about h5 {
-  margin: 0 0 15px 0;
-  color: #007ae1;
-}
-.account-settings .about p {
-  font-size: 0.825rem;
-}
-.form-control {
-  border: 1px solid #cfd1d8;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  font-size: .825rem;
-  background: #ffffff;
-  color: #2e323c;
-} */
+
 /* -------------------------------user Home page css ends here ------------------------------------ */
 
 
@@ -341,12 +295,15 @@ footer {
   .list-card{
     width: 95% ;
   }
+  .menus{
+    border-bottom:5px solid transparent
+  }
 }
 
 
 @media screen and (max-width: 767px) {
   .usermenu{
-    font-size: 14px;
+    font-size: 12px;
   }
   .hot-btn{
     max-width: 80px;
@@ -374,29 +331,6 @@ footer {
   .view-btn{
     display: none !important;
   }
-  /* .deal_details{
-    padding: 0px !important;
-  } */
-  /* .deal_card{
-    font-size: 13px;
-  } */
-  /* .list-deal-card{
-  height: 150px !important;
-  } */
-  /* .deal-btn{
-    border: none;
-    border-radius: 2px;
-  padding: 0 10px;
-  } */
-  /* .deal-btn > span{
-    margin: 0;
-   font-size: 10px !important;
-  } */
-  /* .dealname{
-    height: 45%;
-    font-size: 14px;
-    padding: 2px 15px 0 0 !important;
-  } */
   .list-card{
     width: 100%;
     height: 150px !important;
@@ -404,7 +338,7 @@ footer {
   .list-card-title{
       font-size: 11px;
       line-height: 20px;
-      max-height: 40px; /* line-height * 3 */
+      max-height: 40px; 
       overflow: hidden;
   }
   .list-card-text{
@@ -413,9 +347,6 @@ footer {
   .list-rating-size{
     font-size: 17px;
   }
-  /* .degree{
-  max-height: 25px !important;
-  } */
   .degree-icons > span{
       font-size: 15px;
   }
@@ -442,7 +373,7 @@ footer {
     font-size: 14px;
   }
   .usermenu{
-    font-size: 12px;
+    font-size: 10px;
   }
   .footer_columns{
     flex-direction: column;

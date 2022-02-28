@@ -10,30 +10,30 @@ const AdminHome = () => {
 
     const [value, setValue] = useState({
         editInfo:true,
-        submitedDeals:false,
-        votedDeals:false
+        userList:false,
+        allDeals:false
     })
 
     const handleChange = (e) => {
         if(e === "editInfo"){
             setValue({
                 editInfo:true,
-                submitedDeals:false,
-                votedDeals:false
+                userList:false,
+                allDeals:false
             })
         }
-        else if(e === "submitedDeals"){
+        else if(e === "userList"){
             setValue({
                 editInfo:false,
-                submitedDeals:true,
-                votedDeals:false
+                userList:true,
+                allDeals:false
             })
         }
-        else if(e === "votedDeals"){
+        else if(e === "allDeals"){
             setValue({
                 editInfo:false,
-                submitedDeals:false,
-                votedDeals:true
+                userList:false,
+                allDeals:true
             })
         }
     }
@@ -51,12 +51,12 @@ const AdminHome = () => {
                     </div>
                 </div>
                 <div className='col-12 d-flex flex-column flex-lg-row justify-content-between p-0'>
-                    <div className='col-12 col-lg-3 col-md-12 col-sm-12'>
+                    <div className='col-12 col-lg-3 col-md-12 col-sm-12 menus'>
                         <div className='col-12 col-md-12 col-lg-11 bg-white h-100 shadow shadow-3 rounded-4'>
                             <div className="list-group list-group-flush col-12 d-flex flex-row flex-lg-column flex-md-row flex-sm-row">
                                 <button className="list-group-item list-group-item-action active d-flex justify-content-center justify-content-lg-start align-items-center usermenu text-center text-sm-start rounded-3" data-bs-toggle="list" onClick={()=> handleChange("editInfo")}>Edit Profile</button>
-                                <button className="list-group-item list-group-item-action d-flex justify-content-center justify-content-lg-start align-items-center usermenu text-center text-sm-start rounded-3" data-bs-toggle="list" onClick={()=> handleChange("submitedDeals")}>User List</button>
-                                <button className="list-group-item list-group-item-action d-flex justify-content-center justify-content-lg-start align-items-center usermenu text-center text-sm-start rounded-3 border-bottom" data-bs-toggle="list" onClick={()=> handleChange("votedDeals")}>All Deals</button>
+                                <button className="list-group-item list-group-item-action d-flex justify-content-center justify-content-lg-start align-items-center usermenu text-center text-sm-start rounded-3" data-bs-toggle="list" onClick={()=> handleChange("userList")}>User List</button>
+                                <button className="list-group-item list-group-item-action d-flex justify-content-center justify-content-lg-start align-items-center usermenu text-center text-sm-start rounded-3 border-bottom" data-bs-toggle="list" onClick={()=> handleChange("allDeals")}>All Deals</button>
                             </div>
                         </div>
                     </div>
@@ -64,10 +64,10 @@ const AdminHome = () => {
                         <div style={{display: value.editInfo ? "block": "none"}}>
                             <AdminEditInfo/>
                         </div>
-                        <div style={{display: value.submitedDeals ? "block": "none"}}>
+                        <div style={{display: value.userList ? "block": "none"}}>
                             <UsersList/>
                         </div>
-                        <div style={{display: value.votedDeals ? "block": "none"}}>
+                        <div style={{display: value.allDeals ? "block": "none"}}>
                             <DealsList/>
                         </div>
                     </div>

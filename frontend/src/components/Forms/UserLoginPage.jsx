@@ -57,10 +57,10 @@ const UserLoginPage = () => {
         <>
             <div className="login-form">
             <div className="container d-flex justify-content-center mb-4">
-                <span className="fs-3 fw-bolder" style={{fontWeight:"400", color:"black"}}>Sign in to account</span>
+                <span className="fs-3 fw-bolder text-black">User Sign in</span>
                 </div>
-                <div className="d-flex justify-content-center px-3">
-                <form method="POST" className='rounded-5' onSubmit={handleSubmit(onSubmit)} style={{backgroundColor:"white", color:"black", fontWeight:"500"}}>
+                <div className="d-flex justify-content-center">
+                <form method="POST" className='rounded-5 py-6 px-4 bg-white text-black' onSubmit={handleSubmit(onSubmit)} style={{fontWeight:"500"}}>
                     <div className="form-group">
                         <label>Username</label>
                         <input type="text" className="form-control rounded-5" name="username" placeholder="username" ref={register({ required: "Username is required"})} value={login.username} onChange={handleChange} />
