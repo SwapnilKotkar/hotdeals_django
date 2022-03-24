@@ -51,6 +51,11 @@ code {
   max-height: 50px; /* line-height * 3 */
   overflow: hidden;
 }
+.degree-icons{
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
 .list-rating-size{
   font-size: 25px;
 }
@@ -347,9 +352,9 @@ footer {
   .list-rating-size{
     font-size: 17px;
   }
-  .degree-icons > span{
+  /* .degree-icons > span{
       font-size: 15px;
-  }
+  } */
   .list-deal-button{
     font-size: 13px;
     font-weight: bold;

@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import DealsSearchBar from './DealsSearchBar';
 import Deals from './Deals';
 import DealsData from './DealsData';
+import { degreeReducer } from '../reducers/degreeReducer';
 
 const categories = ["all", ...new Set(DealsData.map((curElem) => curElem.category ))];
+
 
 const DealsPage = () => {
 
@@ -38,6 +40,6 @@ const DealsPage = () => {
             <Deals deals={deals} view={view} />
         </>
     )
-}
+  }
 
 export default DealsPage
