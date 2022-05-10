@@ -1,5 +1,6 @@
 import DealListview from "./DealListview";
 import DealGridview from "./DealGridview";
+import { FaVideoSlash } from "react-icons/fa";
 
 const Deals = ({deals, view}) =>{
 
@@ -10,7 +11,7 @@ const Deals = ({deals, view}) =>{
                     <div className="row d-flex justify-content-center"> 
                         {deals.map((val, index) => {
                             return (
-                                    <DealListview key={index} id={index} dealName={val.name} dealImage={val.image} dealPrice={val.price} dealInfo={val.info} degree={val.degree} dealLink ={val.link} />
+                                    <DealListview key={index} id={index} dealName={val.name} dealImage={val.image} dealPrice={val.price} dealInfo={val.info} degree={val.degree} dealLink ={val.link} dealRating={val.totalRating} />
                                 )
                         })}
                     </div>
@@ -24,7 +25,7 @@ const Deals = ({deals, view}) =>{
                     <div className="row row-cols-1 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4"> 
                         {deals.map((val, index) => {
                             return (
-                                    <DealGridview key={index} id={index} dealName={val.name} dealImage={val.image} dealPrice={val.price} dealInfo={val.info} degree={val.degree} dealLink ={val.link} />
+                                    <DealGridview key={index} id={index} dealName={val.name} dealImage={val.image} dealPrice={val.price} dealInfo={val.info} degree={val.degree} dealLink ={val.link} dealRating={val.totalRating} />
                                 )
                         })}
                     </div>

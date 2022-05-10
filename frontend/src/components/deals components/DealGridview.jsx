@@ -24,7 +24,7 @@ const DealGridview = (props) => {
                 </div>
                 <h5 className="grid-card-title card-title text-body fw-bold">{dealName}</h5>
                 <p className="grid-card-text card-text mb-2">{dealInfo}</p>
-                <StarRating size = "25"/>
+                <StarRating rating={props.dealRating}/>
             </div>
             <div className="card-footer col-12 d-flex justify-content-end p-2">
               <div className="col-12">

@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# ITEM_PIPELINES = { 'backend.pipelines.ExportPipeline': 100 } 
+
 
 # Application definition
 

@@ -13,20 +13,44 @@ const DealDetails = () =>{
     const {id} = useParams();
     const productID = Number(id);
 
+    const dateObject = new Date();
+    const date = dateObject.toLocaleDateString('en-GB');
+
+    const [review, setReview] = useState({
+        cust_name:"",
+        cust_rating: 4,
+        date: date,
+        cust_review:""
+    })
+
     const [deal, setDeal] = useState(DealsData);
-    const [reviews, setReviews] =useState(ReviewData);
+    const [allReviews, setAllReviews] =useState(ReviewData);
+    const [updatedReviews, setUpdatedReviews] = useState(allReviews);
 
     const updatedProduct = deal.filter((currElem)=> {
         return currElem.id === productID;
     });
-    console.log(updatedProduct)
+
+    const rating = (value) => {
+       setReview({[rating]:value});
+    }
+
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+
+        setReview({...review, [name]:value});
+    }
+
+    const handleReview = () => {
+        setUpdatedReviews([...allReviews, review])
+    } 
 
     return(
         <>
         <Navbar/>
-        {updatedProduct.map((val)=> {
+        {updatedProduct.map((val, index)=> {
             return(
-                    <div className='container-lg p-3'>
+                    <div className='container-lg p-0 mb-2' key={{index}}>
                         <div className="card mb-3">
                             <div className="row g-0">
                                 <div className="col-12 col-md-5 col-sm-12 d-flex justify-content-center align-items-center">
@@ -36,7 +60,7 @@ const DealDetails = () =>{
                                     <div className="card-body d-flex flex-column pt-4 px-4 pb-0">
                                         <h5 className="card-title text-body fw-bold">{val.name}</h5>
                                         <p className="card-text text-body dealDetails-card-text my-1">{val.info}</p>
-                                        <div className="pb-2"><span className="dealDetails-rating-size"><StarRating/></span></div>
+                                        <div className="pb-2"><span className="dealDetails-rating-size"><StarRating rating={val.totalRating} edit={false}/></span></div>
                                         <div className="container-fluid mb-3">
                                             <div className='col-12'>
                                                 <NavLink to="/dealdetails">
@@ -48,15 +72,15 @@ const DealDetails = () =>{
                                 </div>
                             </div>
                         </div>       
-                        <div className="bg-white rounded shadow-sm p-4 mb-4">
+                        <div className="bg-white rounded shadow-sm p-4">
                             <h5 className="mb-4 fw-bold">Customer Reviews</h5>
                             <div className='container-fluid'>
-                                {reviews.map((val, index) => {
+                                {updatedReviews.map((val, index) => {
                                     return (
-                                        <div className='mb-1 p-1'>
+                                        <div className='mb-1 p-1' key={index}>
                                             <h4 className='cust-name'>{val.cust_name}</h4>
                                             <h6 className='cust-review-date'>{val.date}</h6>
-                                            <StarRating className="mb-2" size = "30" key = {index} ratingValue = {val.cust_rating}/>
+                                            <StarRating className="mb-2" rating={val.cust_rating} edit={false}/>
                                             {/* <h5>{val.cust_rating}</h5> */}
                                             <p className='cust-review'>{val.cust_review}</p>
                                         </div>
@@ -64,24 +88,25 @@ const DealDetails = () =>{
                                 })}                   
                             </div>
                         </div>
-                        <div className="bg-white rounded shadow-sm p-4 mb-3 rating-review-select-page">
-                            <h5 className="mb-4">Give product rating</h5>
-                            <form method='POST' className='m-2'>
-                                <div className="form-group mb-2">
-                                    <StarRating className="mb-2" size = "40" ratingValue = "" />
-                                </div>
-                                <div className="form-group mb-2">
-                                    <label>Your Comment</label>
-                                    <textarea className="form-control" style={{height:"100px", boxShadow:"none"}}></textarea>
-                                </div>
-                                <div className="form-group">
-                                    <button className="btn btn-primary btn-md" type="submit"> Submit</button>
-                                </div>
-                            </form>
-                        </div>
+                        
                     </div>
                 )
         })}
+        <div className="container-lg bg-white rounded shadow-sm p-4 mb-3 rating-review-select-page">
+            <h5 className="mb-4">Give product rating</h5>
+            <form className='m-2' onSubmit={handleReview}>
+                <div className="form-group mb-2">
+                    <StarRating className="mb-2" edit={true}/>
+                </div>
+                <div className="form-group mb-2">
+                    <label>Your Comment</label>
+                    <textarea className="form-control" style={{height:"100px", boxShadow:"none"}} name="cust_review" value={review.cust_review} onChange={handleChange}></textarea>
+                </div>
+                <div className="form-group">
+                    <button className="btn btn-primary btn-md" type="submit"> Submit</button>
+                </div>
+            </form>
+        </div>
     <Footer/>
     </>
 );

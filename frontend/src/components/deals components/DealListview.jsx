@@ -23,7 +23,7 @@ const DealListview = (props) => {
                 <div className="col-12 mb-2">
                     <div className="col-sm-3 col-5 d-flex border border-2 rounded-2">
                         <div className="degree-icons col-3 d-flex justify-content-center align-items-center" style={{color: "red"}}>-</div>
-                        <div className="degree-icons col-6 d-flex justify-content-center align-items-center" style={{fontSize:"16px", color:"orangered"}}>{degree}</div>
+                        <div className="degree-icons col-6 d-flex justify-content-center align-items-center" style={{fontSize:"16px", color:"#FF5F1F "}}>{degree}°</div>
                         <div className="degree-icons col-3 d-flex justify-content-center align-items-center" style={{color: "green", cursor:"pointer", fontWeight:"bold"}}>+</div>
                     </div>
                 </div>          
@@ -33,7 +33,7 @@ const DealListview = (props) => {
               <div className="w-100 row justify-content-end align-items-center mb-2">
               <div className='col-6'>
                 <div className='col-12 d-flex justify-content-start align-items-center'>
-                <span className="list-rating-size"><StarRating/></span>
+                <span className="list-rating-size"><StarRating rating={props.dealRating} edit={false}/></span>
                 </div>
               </div>
                 <div className="col-6 d-flex justify-content-end p-0">
