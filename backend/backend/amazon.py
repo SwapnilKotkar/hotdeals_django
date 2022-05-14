@@ -13,7 +13,7 @@ collection = db["amazonDeals"]
 # -----------------------------------------------------
 
 baseUrl = "https://www.amazon.in"
-url = "https://www.amazon.in/deal/1b120f55"
+url = "https://www.amazon.in/deal/00a3faef"
 
 s = HTMLSession()
 
@@ -69,4 +69,4 @@ getData(links)
 print(deals)
 print(len(deals))
 
-# collection.insert_many(deals)
+collection.insert_many(deals)

@@ -31,19 +31,28 @@ def getLinks(url):
 def getData(links):
     for link in links:
 
+        title= ""
+        price = ""
+        productData = {}
+
         r = s.get(link)
         soup = BeautifulSoup(r.text, "html.parser")
 
-        titleDiv = soup.find('div', class_="x-item-title")
-        productTitle = titleDiv.find('span', class_= "ux-textspans").get_text()
-        productPrice = soup.find('span', id= "prcIsum").get_text()
+        titleResult = soup.find('div', class_="x-item-title")
+        # print(titleDiv)
+        # productTitle = soup.find('span', class_= "ux-textspans").get_text()
+        priceResult = soup.find('span', id= "prcIsum")
 
-        productData = {
-            'title' : productTitle,
-            'price' : productPrice
-        }
+        if titleResult and priceResult:
 
-        deals.append(productData)
+            title = titleResult.get_text()
+            productData["title"] = title.strip()
+
+            price = priceResult.get_text()
+            productData["price"] = price.strip()
+
+        if productData:
+            deals.append(productData)
 
 
 
