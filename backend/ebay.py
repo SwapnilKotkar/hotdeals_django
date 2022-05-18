@@ -1,18 +1,10 @@
-import pymongo
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
+import requests
+import json
 
 
-# created connection with mongoDB.............
-
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-
-db = client["deals"]
-collection = db["ebayDeals"]
-
-# -----------------------------------------------------
-
-url = "https://www.ebay.com/globaldeals"
+apiURL = "https://www.ebay.com/globaldeals"
 
 s = HTMLSession()
 
@@ -29,18 +21,18 @@ def getLinks(url):
 
 
 def getData(links):
+
+    productData = {}
+
     for link in links:
 
         title= ""
         price = ""
-        productData = {}
 
         r = s.get(link)
         soup = BeautifulSoup(r.text, "html.parser")
 
         titleResult = soup.find('div', class_="x-item-title")
-        # print(titleDiv)
-        # productTitle = soup.find('span', class_= "ux-textspans").get_text()
         priceResult = soup.find('span', id= "prcIsum")
 
         if titleResult and priceResult:
@@ -54,14 +46,21 @@ def getData(links):
         if productData:
             deals.append(productData)
 
+            url = 'http://127.0.0.1:8000/dealCreate/'
+            json_data=json.dumps(productData)
+            r=requests.post(url=url,data=json_data)
+            data=r.json()
+            print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+            print(data)
 
 
 
-links = getLinks(url)
+links = getLinks(apiURL)
 
 deals = []
 getData(links)
+print('*********************************************************************************')
 print(deals)
-print(len(deals))
+print('***********************************************************************************')
 
-collection.insert_many(deals)
+print(len(deals))
