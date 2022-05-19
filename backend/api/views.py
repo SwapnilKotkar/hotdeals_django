@@ -1,4 +1,5 @@
 from .models import *
+from bson import ObjectId
 from .serializers import dealSerializer
 from rest_framework.response import Response
 from rest_framework import status
@@ -14,7 +15,7 @@ class DealViewSet(viewsets.ViewSet):
     def retrieve(self, request, pk=None):
         id = pk
         if id is not None:
-            products = deal.objects.get(id=id)
+            products = deal.objects.get(_id=ObjectId(id))
             serializer = dealSerializer(products)
             return Response(serializer.data)
 
@@ -29,7 +30,7 @@ class DealViewSet(viewsets.ViewSet):
 
     def update(self, request, pk):
         id = pk
-        products = deal.objects.get(pk=id)
+        products = deal.objects.get(_id=ObjectId(id))
         serializer = dealSerializer(products, data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -38,7 +39,7 @@ class DealViewSet(viewsets.ViewSet):
 
     def partial_update(self, request, pk):
         id = pk
-        products = deal.objects.get(pk=id)
+        products = deal.objects.get(_id=ObjectId(id))
         serializer = dealSerializer(products, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
@@ -47,6 +48,6 @@ class DealViewSet(viewsets.ViewSet):
 
     def destroy(self, request, pk):
         id = pk
-        products = deal.objects.get(pk=id)
+        products = deal.objects.get(_id=ObjectId(id))
         products.delete()
         return Response({"msg": "Data Deleted"})
