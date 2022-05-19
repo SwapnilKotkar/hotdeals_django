@@ -45,13 +45,17 @@ def getData(links):
 
         if productData:
             deals.append(productData)
+            print(productData)
 
-            url = 'http://127.0.0.1:8000/dealCreate/'
+            url = 'http://127.0.0.1:8000/api/'
+            headers = {'content-Type': 'application/json'}
+
             json_data=json.dumps(productData)
-            r=requests.post(url=url,data=json_data)
+            r=requests.post(url=url, headers=headers, data=json_data)
             data=r.json()
-            print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+
             print(data)
+            print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 
 
 

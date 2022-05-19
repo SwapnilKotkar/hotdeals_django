@@ -1,32 +1,52 @@
-import json
-from django.shortcuts import render
-import io
 from .models import *
-from rest_framework.parsers import JSONParser
 from .serializers import dealSerializer
-from rest_framework.renderers import JSONRenderer
-from django.http import HttpResponse
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework import viewsets
 from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
-@csrf_exempt
-def deal_list(request):
-    stu = deals.objects.all()
-    serializer = dealSerializer(stu,many=True)
-    json_data = JSONRenderer().render(serializer.data)
-    return HttpResponse(json_data, content_type="application/json")
+class DealViewSet(viewsets.ViewSet):
+    def list(self, request):
+        products = deal.objects.all()
+        serializer = dealSerializer(products, many=True)
+        return Response(serializer.data)
 
-@csrf_exempt
-def deal_create(request):
-    if request.method == "POST":
-        json_data = request.body
-        stream = io.BytesIO(json_data)
-        pythondata = JSONParser().parse(stream)
-        serializer = dealSerializer(data=pythondata)
+    def retrieve(self, request, pk=None):
+        id = pk
+        if id is not None:
+            products = deal.objects.get(id=id)
+            serializer = dealSerializer(products)
+            return Response(serializer.data)
+
+    # @csrf_exempt
+    def create(self, request):
+        serializer = dealSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            res = {'msg': "Data Created"}
-            json_data = JSONRenderer().render(res)
-            return HttpResponse(json_data, content_type="application/json")
-        json_data = JSONRenderer().render(serializer.errors)
-        return HttpResponse(json_data, content_type="application/json")
+            return Response({'msg': "Data Created"}, status=status.HTTP_201_CREATED)
+        print(serializer.errors)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def update(self, request, pk):
+        id = pk
+        products = deal.objects.get(pk=id)
+        serializer = dealSerializer(products, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'msg': "Complete Data Updated!"})
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def partial_update(self, request, pk):
+        id = pk
+        products = deal.objects.get(pk=id)
+        serializer = dealSerializer(products, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'msg': "Partial Data Updated!"})
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def destroy(self, request, pk):
+        id = pk
+        products = deal.objects.get(pk=id)
+        products.delete()
+        return Response({"msg": "Data Deleted"})

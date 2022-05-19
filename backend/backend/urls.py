@@ -15,13 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import include
+from django.urls.conf import include
 from rest_framework.authtoken.views import obtain_auth_token
+from rest_framework.routers import DefaultRouter
 from api import views
+
+# Creating Router Object
+router = DefaultRouter()
+
+router.register('api', views.DealViewSet, basename="deal")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', obtain_auth_token),
-    path('dealCreate/',views.deal_create),
-    path('dealList/', views.deal_list )
+    # path('dealCreate/',views.deal_create),
+    # path('dealList/', views.deal_list )
+    path('', include(router.urls)),
 ]
