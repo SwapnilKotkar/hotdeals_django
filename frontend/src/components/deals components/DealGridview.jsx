@@ -18,7 +18,7 @@ const DealGridview = (props) => {
                 <div className="col-12 mb-2">
                     <div className="col-6 d-flex border border-1 rounded-2">
                         <div className="degree-icons col-3 d-flex justify-content-center align-items-center" style={{color: "red"}}>-</div>
-                        <div className="degree-icons col-6 d-flex justify-content-center align-items-center" style={{fontSize:"16px", color:"orangered"}}>{degree}</div>
+                        <div className="degree-icons col-6 d-flex justify-content-center align-items-center" style={{fontSize:"14px", color:"orangered"}}>{degree}°</div>
                         <div className="degree-icons col-3 d-flex justify-content-center align-items-center" style={{color: "greenyellow"}}>+</div>
                     </div>
                 </div>
