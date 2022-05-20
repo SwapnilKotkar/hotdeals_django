@@ -2,6 +2,7 @@ from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 import requests
 import json
+import random
 
 
 apiURL = "https://www.ebay.com/globaldeals"
@@ -26,22 +27,31 @@ def getData(links):
 
     for link in links:
 
-        title= ""
+        name= ""
         price = ""
+        image = ""
 
         r = s.get(link)
         soup = BeautifulSoup(r.text, "html.parser")
 
         titleResult = soup.find('div', class_="x-item-title")
         priceResult = soup.find('span', id= "prcIsum")
+        imageResult = soup.find('img', id="icImg" )
 
-        if titleResult and priceResult:
+        if titleResult and priceResult and imageResult:
 
-            title = titleResult.get_text()
-            productData["title"] = title.strip()
+            name = titleResult.get_text()
+            productData["name"] = name.strip()
 
             price = priceResult.get_text()
             productData["price"] = price.strip()
+
+            image = imageResult.get('src')
+            productData["image"] = image
+
+            productData["totalRating"] = random.randint(3,5)
+
+            productData["degree"] = random.randint(300,700)
 
         if productData:
             deals.append(productData)
@@ -63,8 +73,6 @@ links = getLinks(apiURL)
 
 deals = []
 getData(links)
-print('*********************************************************************************')
-print(deals)
-print('***********************************************************************************')
-
-print(len(deals))
+print('*************************************************************')
+print("total deals added : ",len(deals))
+print('*************************************************************')
