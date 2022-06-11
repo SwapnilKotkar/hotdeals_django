@@ -10,7 +10,6 @@ const UserLoginPage = () => {
     const userStatus = useSelector((state) => state.auth);
     const dispatch = useDispatch();
 
-    const link = "";
     const navigate = useNavigate();
 
     const [loginData, setLoginData] = useState({
