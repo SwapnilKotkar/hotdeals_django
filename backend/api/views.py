@@ -4,9 +4,13 @@ from .serializers import dealSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
+from rest_framework.decorators import authentication_classes, permission_classes
 from django.views.decorators.csrf import csrf_exempt
 
+@authentication_classes([])
+@permission_classes([])
 class DealViewSet(viewsets.ViewSet):
+
     def list(self, request):
         products = deal.objects.all()
         serializer = dealSerializer(products, many=True)
@@ -19,7 +23,6 @@ class DealViewSet(viewsets.ViewSet):
             serializer = dealSerializer(products)
             return Response(serializer.data)
 
-    # @csrf_exempt
     def create(self, request):
         serializer = dealSerializer(data=request.data)
         if serializer.is_valid():
