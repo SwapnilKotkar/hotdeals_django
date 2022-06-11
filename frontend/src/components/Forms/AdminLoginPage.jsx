@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from 'react-redux';
-import {adminAction} from "../actions/index";
+import { adminAction } from '../../actions/auth';
 
 
 

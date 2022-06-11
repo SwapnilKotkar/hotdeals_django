@@ -11,7 +11,7 @@ const Deals = ({deals, view}) =>{
                     <div className="row d-flex justify-content-center"> 
                         {deals.map((val, index) => {
                             return (
-                                    <DealListview key={index} id={index} dealName={val.name} dealImage={val.image} dealPrice={val.price} dealInfo={val.info} degree={val.degree} dealLink ={val.link} dealRating={val.totalRating} />
+                                    <DealListview key={index} id={val._id} dealName={val.name} dealImage={val.image} dealPrice={val.price} dealInfo={val.info} degree={val.degree} dealLink ={val.link} dealRating={val.totalRating} />
                                 )
                         })}
                     </div>
@@ -25,7 +25,7 @@ const Deals = ({deals, view}) =>{
                     <div className="row row-cols-1 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4"> 
                         {deals.map((val, index) => {
                             return (
-                                    <DealGridview key={index} id={index} dealName={val.name} dealImage={val.image} dealPrice={val.price} dealInfo={val.info} degree={val.degree} dealLink ={val.link} dealRating={val.totalRating} />
+                                    <DealGridview key={index} id={val._id} dealName={val.name} dealImage={val.image} dealPrice={val.price} dealInfo={val.info} degree={val.degree} dealLink ={val.link} dealRating={val.totalRating} />
                                 )
                         })}
                     </div>

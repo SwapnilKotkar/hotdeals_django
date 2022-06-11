@@ -1,19 +1,28 @@
 import {NavLink, useNavigate } from "react-router-dom";
 import React, {useState} from 'react';
 import { useForm } from "react-hook-form";
+import { useSelector, useDispatch } from 'react-redux';
+import { signup } from "../../actions/auth";
+import axios from "axios";
 
 let SignUpPage = () => {
     let link = "";
-    const history = useNavigate();
+    const navigate = useNavigate();
+
+    const [accountCreated, setAccountCreated] = useState(false);
+
+    const userStatus = useSelector((state) => state.auth);
+    const dispatch = useDispatch();
 
     const [values, setValues]= useState({
         first_name:"",
         last_name:"",
         email:"",
         password:"",
+        re_password:"",
     });
 
-    // const [signinRecord, setSigninRecord]=useState([]);
+    const {first_name, last_name, email, password, re_password} = values;
 
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -22,37 +31,31 @@ let SignUpPage = () => {
     }
 
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = async () => {
-        // setSigninRecord([...signinRecord, values]);
-        // setValues({
-        //     first_name:"",
-        //     last_name:"",
-        //     email:"",
-        //     password:""
-        // });     
+    const onSubmit = () => {   
         
-        const {first_name, last_name, username= values.first_name + values.last_name, email, password} = values;
+        if (password === re_password) {
+            dispatch(signup(first_name, last_name, email, password, re_password));
+            setAccountCreated(true);
+        };
+    };
 
-        const res = await fetch('/api/users/', {
-            method: "POST",
-            headers: {
-                "Content-Type" : "application/json"
-            },
-            body: JSON.stringify({ first_name, last_name, username, email, password })
-        });
+    const continueWithGoogle = async () => {
+        try {
+            const res = await axios.get('http://localhost:3000/auth/o/google-oauth2/?redirect_uri=http://localhost:3000')
 
-        const data = await res.json();
+            window.location.replace(res.data.authorization_url);
+        } catch (err) {
 
-        if(res.status === 422 || !data ) {
-            window.alert("invalid registration");
-            console.log("invalid registration");
-        }else {
-            window.alert("successfull registration");
-            console.log("successfull registration");
-
-            history("/userlogin");
         }
     };
+
+    if (userStatus.isAuthenticated) {
+        navigate("/")
+    }
+
+    if (accountCreated) {
+        navigate("/userlogin")
+    }
     
     
     return(
@@ -80,15 +83,26 @@ let SignUpPage = () => {
                         </div>
                         <div className="form-group">
                             <label>Password</label>
-                            <input type="password" className="form-control rounded-5" name="password" ref={register({ required: "Password is required", minLength: {value: 4, message: "Password must be more than 4 characters" }, maxLength: { value: 10, message: "Password cannot exceed more than 10 characters" }})} value={values.password} onChange={handleChange} />
+                            <input type="password" className="form-control rounded-5" name="password" ref={register({ required: "Password is required", minLength: {value: 4, message: "Password must be more than 4 characters" }, maxLength: { value: 20, message: "Password cannot exceed more than 20 characters" }, })} value={values.password} onChange={handleChange} />
                             <p className="warning">{errors.password?.message}</p>
-                        </div>       
+                        </div>
+                        <div className="form-group">
+                            <label>Re-enter Password</label>
+                            <input type="password" className="form-control rounded-5" name="re_password" ref={register({ required: "Password is required", minLength: {value: 4, message: "Password must be more than 4 characters" }, maxLength: { value: 20, message: "Password cannot exceed more than 20 characters" }})} value={values.re_password} onChange={handleChange} />
+                            <p className="warning">{errors.re_password?.message}</p>
+                        </div>          
                         <div className="form-group">
                             <label className="form-check-label"><input type="checkbox" required /> I accept the <a href={link} style={{color:"blue"}}>Terms of Use</a> &amp; <a href={link} style={{color:"blue"}}>Privacy Policy</a></label>
                         </div>
                         <div className="form-group">
-                            <button type="submit" className="container btn btn-primary btn-lg" ><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}>Register Now</span></button>
+                            <button type="submit" className="container btn btn-success btn-lg" ><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}>Register Now</span></button>
                         </div>
+                        <div className="form-group">
+                            <button className='container btn btn-danger btn-lg' onClick={continueWithGoogle}><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}> Sign up With Google </span> </button>
+                        </div>
+                        {/* <div className="form-group">
+                            <button className='container btn btn-primary btn-lg' onClick={continueWithGoogle}><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}> Sign up With Facebook </span> </button>
+                        </div> */}
                         <div className="text-center mt-3">Already have an account? <NavLink to="/userlogin"><span style={{color:"blue" }} >Sign in</span></NavLink></div>
                         <hr className="container"/>
 

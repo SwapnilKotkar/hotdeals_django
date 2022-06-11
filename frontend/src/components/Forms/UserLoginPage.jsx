@@ -2,55 +2,46 @@ import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from 'react-redux';
-import {userAction} from "../actions/index";
+import { login } from '../../actions/auth';
+import axios from "axios";
 
 const UserLoginPage = () => {
 
-    const userStatus = useSelector((state) => state.userReducer);
+    const userStatus = useSelector((state) => state.auth);
     const dispatch = useDispatch();
 
     const link = "";
-    const history = useNavigate();
+    const navigate = useNavigate();
 
-    const [login, setLogin] = useState({
-       username: "",
+    const [loginData, setLoginData] = useState({
+       email: "",
        password: "" 
     });
 
-    // const [loginRecord, setLoginRecord] = useState([]);
+    const {email, password} = loginData;
 
     const handleChange = (event) =>{
         const {name, value} = event.target;
-        setLogin({...login, [name]: value});
+        setLoginData({...loginData, [name]: value});
     }
 
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = async () =>{
-        // setLoginRecord([...loginRecord, login])
-        // setLogin({
-        //     username: "",
-        //     password: "" 
-        //  });
+    const onSubmit = () =>{
+        dispatch(login(email, password));
+    };
 
-         const {username, password} = login;
+    const continueWithGoogle = async () => {
+        try {
+            const res = await axios.get('http://localhost:3000/auth/o/google-oauth2/?redirect_uri=http://localhost:3000')
 
-        const res = await fetch('/auth/', {
-            method: "POST",
-            headers: {
-                "Content-Type" : "application/json"
-            },
-            body: JSON.stringify({ username, password })
-        });
+            window.location.replace(res.data.authorization_url);
+        } catch (err) {
 
-        const data = res.json();
-
-        if(res.status === 400 || !data) {
-            window.alert("login failed");
-        }else{
-            dispatch(userAction());
-            window.alert("login success");
-            history("/");
         }
+    };
+
+    if (userStatus.isAuthenticated) {
+        navigate("/")
     }
 
     return(
@@ -62,9 +53,9 @@ const UserLoginPage = () => {
                 <div className="d-flex justify-content-center">
                 <form method="POST" className='rounded-5 py-6 px-4 bg-white text-black' onSubmit={handleSubmit(onSubmit)} style={{fontWeight:"500"}}>
                     <div className="form-group">
-                        <label>Username</label>
-                        <input type="text" className="form-control rounded-5" name="username" placeholder="username" ref={register({ required: "Username is required"})} value={login.username} onChange={handleChange} />
-                        <p className="warning">{errors.username?.message}</p>
+                        <label>Email</label>
+                        <input type="email" className="form-control rounded-5" name="email" placeholder="email" ref={register({ required: "Email is required"})} value={login.email} onChange={handleChange} />
+                        <p className="warning">{errors.email?.message}</p>
                     </div>
                     <div className="form-group">
                             <label>Password</label>
@@ -73,18 +64,23 @@ const UserLoginPage = () => {
                     </div>   
                     <div className="clearfix mb-2">
                         <label className="float-left form-check-label p-1"><input type="checkbox" required /> Remember me</label>
-                        <a href={link} className="float-right text-primary">Forgot Password?</a>
+                        <NavLink to="/reset_password" className="float-right text-primary">Forgot Password?</NavLink>
                     </div>       
                     <div className="form-group">
                         <button type="submit" className="container btn btn-primary btn-block login-btn"><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}>Sign in</span></button>
                     </div>
-                    
+                    <div className="form-group">
+                            <button className='container btn btn-danger btn-lg' onClick={continueWithGoogle}><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}> Sign up With Google </span> </button>
+                    </div>
+                    {/* <div className="form-group">
+                        <button className='container btn btn-primary btn-lg' onClick={continueWithGoogle}><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}> Sign up With Facebook </span> </button>
+                    </div> */}                    
                     <div className="hint-text mt-3">Don't have an account? <NavLink to="/signup" className="text-primary">Register Now!</NavLink></div>     
-                <hr className="container m-0"/>
+                    <hr className="container m-0"/>
                     <div className="container-sm d-flex justify-content-center">
                         <NavLink to="/" className="nav-link p-2 text-primary">Home</NavLink>
                         <NavLink to="/adminlogin" className="nav-link p-2 text-primary">Admin Login</NavLink>
-                </div>           
+                    </div>           
                 </form>        
                 </div>
             </div>            

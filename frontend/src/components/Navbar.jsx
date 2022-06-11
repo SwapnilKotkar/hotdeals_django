@@ -1,46 +1,42 @@
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { checkAuthenticated, googleAuthenticate, load_user, logout } from '../actions/auth';
+import { useEffect, useState } from 'react';
+import queryString from 'query-string';
 
 
 const Navbar = () =>{
 
-    const userStatus = useSelector((state) => state.userReducer);
-    const adminStatus = useSelector((state) => state.adminReducer);
+  const location = useLocation();
 
+  const userStatus = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
-    const Menu = () => {
-      if(userStatus === "user") {
-        return(
-          <>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">User</a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><NavLink className="dropdown-item" to='/userhome'>Profile</NavLink></li>
-                <li><NavLink className="dropdown-item" to='/'>Logout</NavLink></li>
-              </ul>
-            </li>
-          </>
-        );
-      }
-      else if(adminStatus === "admin") {
-        return(
-          <>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">Admin</a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><NavLink className="dropdown-item" to='/adminhome'>Dashboard</NavLink></li>
-                <li><NavLink className="dropdown-item" to='/'>Logout</NavLink></li>
-              </ul>
-            </li>
-          </>
-        );
-      }
-      else{
-       return(
-        <>
-        <li className="nav-item">
-            <NavLink className="nav-link" to="/adminlogin">Admin Login</NavLink>
-        </li> 
+  const [redirect, setRedirect] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const values= queryString.parse(location.search);
+    const state = values.state ?  values.state : null;
+    const code = values.code ?  values.code : null;
+
+    if(state && code){
+      dispatch(googleAuthenticate(state, code));
+    }
+    else{
+      dispatch(checkAuthenticated());
+      dispatch(load_user());
+    }
+  }, [location]);
+
+  const logout_user = () => {
+    dispatch(logout());
+    setRedirect(true);
+    navigate("/");
+};
+
+  const guestLinks = () => (
+    <>
         <li className="nav-item">
             <NavLink className="nav-link" to="/userlogin">Sign in</NavLink>
         </li>
@@ -48,9 +44,19 @@ const Navbar = () =>{
             <NavLink className="nav-link" to="/signup">Sign up</NavLink>
         </li>
     </>
-       );
-      }
-    }
+  );
+
+  const authLinks = () => (
+     <>
+      <li className="nav-item">
+        <NavLink className='nav-link' to='/userhome'>Profile</NavLink>
+      </li>
+      <li className='nav-item'>
+        <a className='nav-link' href='#!' onClick={logout_user}>Logout</a>
+      </li>
+     </>
+  );
+
     
     return(
         <>            
@@ -65,20 +71,15 @@ const Navbar = () =>{
                   <li className="nav-item">
                     <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
                 </li>
-                  <Menu/>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/userhome">User home</NavLink>
-                  </li>
-                  <li className="nav-item">
-                      <NavLink className="nav-link" to="/adminhome">Admin home</NavLink>
-                  </li>
+                  {userStatus.isAuthenticated ? authLinks() : guestLinks()}
                   <li>
                     <NavLink className="nav-link p-0 " to="/submitdeal"><button className="btn btn-primary rounded-3" type="submit" ><span className="text-capitalize" style={{fontSize:"14px"}}>Submit Deal</span></button></NavLink>                
                   </li>
                 </ul>          
               </div>
             </div>
-          </nav>          
+          </nav>     
+          {redirect ? <NavLink to='/' /> : <></>}     
         </>
     );
 }
