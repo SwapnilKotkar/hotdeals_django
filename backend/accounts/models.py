@@ -1,10 +1,9 @@
-import datetime
+from datetime import datetime
 from djongo import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
 
-x = datetime.datetime.now()
-randomNumber = int(x.strftime("%f"))
+randomNumber = int(datetime.now().strftime('%Y%m%d%H%M%S'))
 
 
 class UserAccountManager(BaseUserManager):
@@ -34,7 +33,8 @@ class UserAccountManager(BaseUserManager):
 
 
 class UserAccount(AbstractBaseUser, PermissionsMixin):
-    id=models.IntegerField(default=randomNumber, primary_key=True)
+    _id = models.ObjectIdField(auto_created=True, unique=True, primary_key=True)
+    id=models.BigIntegerField(default=randomNumber)
     email = models.EmailField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)

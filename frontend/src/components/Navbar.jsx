@@ -1,13 +1,11 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { checkAuthenticated, googleAuthenticate, load_user, logout } from '../actions/auth';
+import { checkAuthenticated, load_user, logout } from '../actions/auth';
 import { useEffect, useState } from 'react';
 import queryString from 'query-string';
 
 
 const Navbar = () =>{
-
-  const location = useLocation();
 
   const userStatus = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -16,18 +14,9 @@ const Navbar = () =>{
   const navigate = useNavigate();
 
   useEffect(() => {
-    const values= queryString.parse(location.search);
-    const state = values.state ?  values.state : null;
-    const code = values.code ?  values.code : null;
-
-    if(state && code){
-      dispatch(googleAuthenticate(state, code));
-    }
-    else{
       dispatch(checkAuthenticated());
       dispatch(load_user());
-    }
-  }, [location]);
+  }, []);
 
   const logout_user = () => {
     dispatch(logout());

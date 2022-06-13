@@ -11,6 +11,8 @@ import DealSubmit from "./Forms/DealSubmit";
 import DealDetails from "./deals components/DealDetails";
 import UserHome from "./user components/UserHome";
 import AdminHome from "./admin components/AdminHome";
+import Google from './Forms/Google';
+import Facebook from './Forms/Facebook';
 
 
 const App = () =>{
@@ -21,6 +23,8 @@ const App = () =>{
             <Route exact path='/' element={<HomePage/>}/>
             <Route exact path='/userlogin' element={<UserLoginPage/>}/>
             <Route exact path='/signup' element={<SignUpPage/>}/>
+            <Route exact path='/facebook' element={<Facebook/>}/>
+            <Route exact path='/google' element={<Google/>}/>
             <Route exact path='/adminlogin' element={<AdminLoginPage/>}/>
             <Route exact path='/submitdeal' element={<DealSubmit/>}/>
             <Route exact path='/dealdetails/:id' element={<DealDetails/>}/>

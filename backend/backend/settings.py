@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'accounts',
     'social_django',
     'rest_framework_simplejwt',
-    'rest_framework_simplejwt.token_blacklist'
 ]
 
 MIDDLEWARE = [
@@ -77,6 +76,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect'
             ],
         },
     },
@@ -91,7 +92,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'hotdeals_django',
+        'NAME': 'hotdeals_db',
     }
 }
 
@@ -185,7 +186,7 @@ DJOSER = {
     'ACTIVATION_URL': 'activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
-    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:3000'],
+    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:3000/google', 'http://localhost:3000/facebook'],
     'SERIALIZERS': {
         'user_create': 'accounts.serializers.UserCreateSerializer',
         'user': 'accounts.serializers.UserCreateSerializer',
@@ -198,5 +199,10 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '806732428772-giv9mqsh62jagontdmji09gjpv7tu1r6.a
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile', 'openid']
 SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ['first_name', 'last_name']
+
+SOCIAL_AUTH_FACEBOOK_KEY = '2087145891468417'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'c13f9781a06a9f3ce602a11d3bafa845'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = { 'fields': 'email, first_name, last_name' }
 
 AUTH_USER_MODEL = 'accounts.UserAccount'

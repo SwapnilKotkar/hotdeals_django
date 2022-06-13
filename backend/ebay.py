@@ -14,7 +14,7 @@ def getLinks(url):
     r = s.get(url=url)
     soup = BeautifulSoup(r.text, "html.parser")
 
-    results = [link.attrs['href'] for link in soup.select("div.ebayui-dne-item-featured-card div.row div.col div.dne-itemtile a") ]
+    results = [link.attrs['href'] for link in soup.select("#mainContent div.ebayui-refit-main-wrapper div.sections-container div.ebayui-dne-item-pattern-card div.row div.col div.item div.dne-itemtile a") ]
 
     links = []
     [links.append(link) for link in results if link not in links]

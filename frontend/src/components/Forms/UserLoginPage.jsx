@@ -31,7 +31,17 @@ const UserLoginPage = () => {
 
     const continueWithGoogle = async () => {
         try {
-            const res = await axios.get('http://localhost:3000/auth/o/google-oauth2/?redirect_uri=http://localhost:3000')
+            const res = await axios.get('http://localhost:3000/auth/o/google-oauth2/?redirect_uri=http://localhost:3000/google')
+
+            window.location.replace(res.data.authorization_url);
+        } catch (err) {
+
+        }
+    };
+
+    const continueWithFacebook = async () => {
+        try {
+            const res = await axios.get('http://localhost:3000/auth/o/facebook/?redirect_uri=http://localhost:3000/facebook')
 
             window.location.replace(res.data.authorization_url);
         } catch (err) {
@@ -71,9 +81,9 @@ const UserLoginPage = () => {
                     <div className="form-group">
                             <button className='container btn btn-danger btn-lg' onClick={continueWithGoogle}><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}> Sign up With Google </span> </button>
                     </div>
-                    {/* <div className="form-group">
-                        <button className='container btn btn-primary btn-lg' onClick={continueWithGoogle}><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}> Sign up With Facebook </span> </button>
-                    </div> */}                    
+                    <div className="form-group">
+                        <button className='container btn btn-primary btn-lg' onClick={continueWithFacebook}><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}> Sign up With Facebook </span> </button>
+                    </div>                    
                     <div className="hint-text mt-3">Don't have an account? <NavLink to="/signup" className="text-primary">Register Now!</NavLink></div>     
                     <hr className="container m-0"/>
                     <div className="container-sm d-flex justify-content-center">

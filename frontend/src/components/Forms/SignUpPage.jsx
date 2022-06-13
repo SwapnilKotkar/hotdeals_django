@@ -41,7 +41,17 @@ let SignUpPage = () => {
 
     const continueWithGoogle = async () => {
         try {
-            const res = await axios.get('http://localhost:3000/auth/o/google-oauth2/?redirect_uri=http://localhost:3000')
+            const res = await axios.get('http://localhost:3000/auth/o/google-oauth2/?redirect_uri=http://localhost:3000/google')
+
+            window.location.replace(res.data.authorization_url);
+        } catch (err) {
+
+        }
+    };
+
+    const continueWithFacebook = async () => {
+        try {
+            const res = await axios.get('http://localhost:3000/auth/o/facebook/?redirect_uri=http://localhost:3000/facebook')
 
             window.location.replace(res.data.authorization_url);
         } catch (err) {
@@ -100,9 +110,9 @@ let SignUpPage = () => {
                         <div className="form-group">
                             <button className='container btn btn-danger btn-lg' onClick={continueWithGoogle}><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}> Sign up With Google </span> </button>
                         </div>
-                        {/* <div className="form-group">
-                            <button className='container btn btn-primary btn-lg' onClick={continueWithGoogle}><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}> Sign up With Facebook </span> </button>
-                        </div> */}
+                        <div className="form-group">
+                            <button className='container btn btn-primary btn-lg' onClick={continueWithFacebook}><span className="text-capitalize" style={{fontSize:"14px", fontWeight:"500"}}> Sign up With Facebook </span> </button>
+                        </div>
                         <div className="text-center mt-3">Already have an account? <NavLink to="/userlogin"><span style={{color:"blue" }} >Sign in</span></NavLink></div>
                         <hr className="container"/>
 

@@ -114,7 +114,7 @@ export const facebookAuthenticate = (state, code) => async dispatch => {
         const formBody = Object.keys(details).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(details[key])).join('&');
 
         try {
-            const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/o/facebook/?${formBody}`, config);
+            const res = await axios.post(`http://localhost:3000/auth/o/facebook/?${formBody}`, config);
 
             dispatch({
                 type: FACEBOOK_AUTH_SUCCESS,
